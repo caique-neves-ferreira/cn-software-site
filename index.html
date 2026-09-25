@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CN Software Consulting — Engenharia de software para sistemas que não podem parar</title>
+<meta name="description" content="Desenvolvimento de software sob medida, modernização de sistemas legados, arquitetura de microsserviços e consultoria técnica para empresas que dependem de sistemas críticos.">
+<meta property="og:title" content="CN Software Consulting">
+<meta property="og:description" content="Engenharia de software para sistemas que não podem parar.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='22' fill='%230C2038'/%3E%3Cg transform='translate(-2 2)'%3E%3Cg fill='none' stroke='%23F4F7FB' stroke-width='13'%3E%3Cpath d='M54.97 43.03 A24 24 0 1 0 54.97 76.97'/%3E%3Cpath d='M76 84 V58 A17 17 0 0 1 110 58 V84'/%3E%3C/g%3E%3Crect x='50' y='53.5' width='20' height='13' rx='6.5' fill='%23F2B84B'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0C2038; --deep:#081729; --panel:#102C4C; --line:#1E3F66;
+  --lane:#3A6294; --blue:#6EA0E1; --amber:#F2B84B;
+  --text:#F4F7FB; --muted:#B9CCE3; --soft:#8FA8C6;
+  --wrap:1180px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--navy);color:var(--text);font-family:'IBM Plex Sans','Segoe UI',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.15}
+h2{font-size:clamp(28px,3.4vw,40px)}
+h3{font-size:20px}
+p{margin:0}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(8,23,41,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(58,98,148,.35)}
+.nav{display:flex;align-items:center;gap:32px;height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.brand svg{width:54px;height:28px}
+.brand span{font-weight:600;font-size:17px;letter-spacing:-.01em}
+.brand small{display:block;font-size:11px;font-weight:500;letter-spacing:.24em;color:var(--muted);text-transform:uppercase;line-height:1}
+.links{display:flex;gap:28px;margin-left:auto}
+.links a{text-decoration:none;color:var(--muted);font-size:15px;font-weight:500}
+.links a:hover{color:var(--text)}
+.lang{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.lang button{background:transparent;border:0;color:var(--soft);font:600 13px/1 inherit;font-family:inherit;padding:9px 11px;cursor:pointer;min-height:36px}
+.lang button[aria-pressed="true"]{background:var(--panel);color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;transition:background .15s,border-color .15s}
+.btn-primary{background:var(--amber);color:#1a1405}
+.btn-primary:hover{background:#f7c766}
+.btn-ghost{border:1px solid var(--lane);color:var(--text)}
+.btn-ghost:hover{border-color:var(--blue);background:rgba(110,160,225,.08)}
+.nav .btn{min-height:40px;padding:0 16px}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;width:44px;height:44px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--deep) 0%,var(--navy) 100%);border-bottom:1px solid rgba(58,98,148,.3)}
+.lanes{position:absolute;inset:0;width:100%;height:100%}
+.lanes .row{animation:flow linear infinite}
+@keyframes flow{from{transform:translateX(0)}to{transform:translateX(-1600px)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,23,41,.97) 0%,rgba(8,23,41,.9) 38%,rgba(8,23,41,.35) 72%,rgba(8,23,41,.15) 100%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-top:112px;padding-bottom:104px}
+.hero h1{font-size:clamp(38px,5.4vw,66px);font-weight:600;max-width:15ch;letter-spacing:-.02em;line-height:1.06}
+.hero .lead{margin-top:26px;font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:56ch}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.focus{position:relative;z-index:1;border-top:1px solid rgba(58,98,148,.35);background:rgba(8,23,41,.6)}
+.focus ul{list-style:none;margin:0 auto;padding:18px 28px;max-width:var(--wrap);display:flex;flex-wrap:wrap;gap:10px 34px;color:var(--muted);font-size:15px;font-weight:500}
+.focus li{display:flex;align-items:center;gap:10px}
+.focus li::before{content:"";width:14px;height:5px;border-radius:3px;background:var(--blue)}
+.focus li:first-child::before{background:var(--amber)}
+
+section{padding:104px 0}
+.intro{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
+.intro p.body{color:var(--muted);margin-top:20px;max-width:52ch}
+.aud{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.aud article{padding:30px;border:1px solid var(--line);border-radius:14px;background:rgba(16,44,76,.45);display:flex;flex-direction:column;gap:14px}
+.aud p{color:var(--muted);font-size:16px}
+.aud a{margin-top:auto;color:var(--amber);font-weight:600;font-size:15px;text-decoration:none}
+.aud a:hover{text-decoration:underline}
+
+/* steps */
+.alt{background:var(--deep);border-top:1px solid rgba(58,98,148,.25);border-bottom:1px solid rgba(58,98,148,.25)}
+.head{max-width:640px;margin-bottom:56px}
+.head p{color:var(--muted);margin-top:14px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;position:relative;counter-reset:s}
+.steps::before{content:"";position:absolute;left:22px;right:22px;top:22px;height:2px;background:linear-gradient(90deg,var(--amber) 0 8%,var(--lane) 8% 100%)}
+.steps li{position:relative;counter-increment:s}
+.steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--navy);border:2px solid var(--lane);font-weight:600;font-size:16px;color:var(--text);margin-bottom:22px;position:relative}
+.steps li:first-child::before{border-color:var(--amber)}
+.steps h3{font-size:18px;margin-bottom:8px}
+.steps p{color:var(--muted);font-size:15px}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.svc article{padding:34px 30px 38px 0;border-bottom:1px solid var(--line)}
+.svc article:not(:nth-child(3n+1)){padding-left:30px;border-left:1px solid var(--line)}
+.svc .mark{display:flex;gap:6px;margin-bottom:22px}
+.svc .mark i{display:block;height:5px;border-radius:3px;background:var(--blue)}
+.svc .mark i:nth-child(1){width:26px}.svc .mark i:nth-child(2){width:10px;background:var(--amber)}.svc .mark i:nth-child(3){width:16px}
+.svc h3{margin-bottom:10px}
+.svc p{color:var(--muted);font-size:16px}
+
+/* cases */
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.case{display:flex;flex-direction:column;gap:14px;padding:32px 30px;border:1px solid var(--line);border-radius:14px;background:rgba(16,44,76,.45)}
+.case .num{font-size:clamp(34px,3.4vw,44px);font-weight:600;letter-spacing:-.02em;line-height:1;color:var(--text)}
+.case .num::after{content:"";display:block;width:26px;height:5px;border-radius:3px;background:var(--amber);margin-top:16px}
+.case .key{color:var(--muted);font-size:15px;margin-top:-6px}
+.case .sector{color:var(--blue);font-size:14px;font-weight:600;margin-top:8px}
+.case h3{font-size:19px}
+.case p.d{color:var(--muted);font-size:15px}
+.case .tech{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);color:var(--soft);font-size:14px}
+.note{margin-top:22px;color:var(--soft);font-size:14px}
+@media (max-width:980px){.cases{grid-template-columns:minmax(0,1fr)}}
+
+/* stack */
+.stack{display:flex;flex-wrap:wrap;gap:12px}
+.stack li{list-style:none;padding:10px 18px;border:1px solid var(--line);border-radius:999px;font-weight:500;font-size:15px;color:var(--text);background:rgba(16,44,76,.4)}
+.stack{margin:0;padding:0}
+.sectors{margin-top:48px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.sectors div{border-left:3px solid var(--lane);padding:4px 0 4px 16px}
+.sectors div:first-child{border-color:var(--amber)}
+.sectors strong{display:block;font-weight:600}
+.sectors span{color:var(--soft);font-size:15px}
+
+/* cta */
+.cta{padding:96px 0;text-align:left}
+.cta .box{border:1px solid var(--lane);border-radius:18px;padding:56px;background:radial-gradient(circle at 88% 20%,rgba(242,184,75,.12),transparent 45%),linear-gradient(135deg,var(--panel),var(--navy));display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.cta p{color:var(--muted);margin-top:12px;max-width:48ch}
+
+/* contact form */
+.cta .box.contact{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+.contact-text .direct{margin-top:28px;font-size:15px;color:var(--soft)}
+.contact-text .direct a{color:var(--amber);font-weight:600;text-decoration:none;word-break:break-all}
+.contact-text .direct a:hover{text-decoration:underline}
+#contact-form{display:flex;flex-direction:column;gap:18px}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-size:14px;font-weight:600;color:var(--muted)}
+.field input,.field select,.field textarea{font:inherit;font-size:16px;color:var(--text);background:rgba(8,23,41,.7);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-height:48px;width:100%}
+.field textarea{resize:vertical;min-height:130px}
+.field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;background-size:5px 5px;background-repeat:no-repeat;padding-right:40px}
+.field select option{background:var(--deep);color:var(--text)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(242,184,75,.2)}
+.field [aria-invalid="true"]{border-color:#F08A6C}
+.honey{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.actions button{border:0;cursor:pointer;font-family:inherit}
+.actions button[disabled]{opacity:.6;cursor:wait}
+#form-status{font-size:15px;color:var(--muted)}
+#form-status.ok{color:#8FE3B0}
+#form-status.err{color:#F5A48C}
+@media (max-width:980px){.cta .box.contact{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.row2{grid-template-columns:minmax(0,1fr)}}
+
+/* footer */
+footer{background:var(--deep);border-top:1px solid rgba(58,98,148,.3);padding:64px 0 36px;font-size:15px}
+.fgrid{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr));gap:40px}
+.fgrid p{color:var(--soft);margin-top:16px;max-width:34ch}
+.fgrid h4{margin:0 0 14px;font-size:14px;font-weight:600;color:var(--text)}
+.fgrid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.fgrid a{color:var(--soft);text-decoration:none}
+.fgrid a:hover{color:var(--text)}
+.legal{margin-top:48px;padding-top:24px;border-top:1px solid rgba(58,98,148,.3);color:var(--soft);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:980px){
+  .intro{grid-template-columns:minmax(0,1fr);gap:40px}
+  .steps{grid-template-columns:minmax(0,1fr);gap:28px}
+  .steps::before{left:22px;right:auto;top:22px;bottom:22px;width:2px;height:auto;background:linear-gradient(180deg,var(--amber) 0 10%,var(--lane) 10% 100%)}
+  .steps li{padding-left:70px}
+  .steps li::before{position:absolute;left:0;top:-2px;margin:0}
+  .svc{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc article:not(:nth-child(3n+1)){padding-left:0;border-left:0}
+  .svc article:nth-child(2n){padding-left:28px;border-left:1px solid var(--line)}
+  .sectors{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .links,.nav .btn{display:none}
+  .menu{display:inline-flex;align-items:center;justify-content:center;margin-left:auto}
+  .nav{gap:12px}
+  header.open .links{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--deep);border-bottom:1px solid var(--line);padding:8px 28px 18px}
+  header.open .links a{padding:12px 0;font-size:17px}
+  .aud{grid-template-columns:minmax(0,1fr)}
+  .svc{grid-template-columns:minmax(0,1fr)}
+  .svc article:nth-child(n){padding:28px 0;border-left:0}
+  .hero .wrap{padding-top:80px;padding-bottom:72px}
+  .hero::after{background:linear-gradient(180deg,rgba(8,23,41,.85),rgba(8,23,41,.93))}
+  section{padding:76px 0}
+  .cta .box{padding:36px 26px}
+  .fgrid{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .lanes .row{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="CN Software Consulting">
+      <svg viewBox="6 28 112 58" aria-hidden="true"><g fill="none" stroke="#F4F7FB" stroke-width="13"><path d="M54.97 43.03 A24 24 0 1 0 54.97 76.97"/><path d="M76 84 V58 A17 17 0 0 1 110 58 V84"/></g><rect x="50" y="53.5" width="20" height="13" rx="6.5" fill="#F2B84B"/></svg>
+      <span>Software<small>Consulting</small></span>
+    </a>
+    <nav class="links" aria-label="Principal">
+      <a href="#servicos" data-i18n="nav_services">Serviços</a>
+      <a href="#processo" data-i18n="nav_process">Como trabalhamos</a>
+      <a href="#cases" data-i18n="nav_cases">Cases</a>
+      <a href="#tecnologias" data-i18n="nav_tech">Tecnologias</a>
+      <a href="#contato" data-i18n="nav_contact">Contato</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-primary" href="#contato" data-i18n="nav_cta">Fale conosco</a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="top" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding:0">
+    <svg class="lanes" id="lanes" aria-hidden="true" preserveAspectRatio="xMidYMid slice"></svg>
+    <div class="wrap">
+      <h1 data-i18n="hero_title">Engenharia de software para sistemas que não podem parar.</h1>
+      <p class="lead" data-i18n="hero_lead">Desenvolvemos, modernizamos e sustentamos sistemas críticos para empresas dos setores financeiro, varejo, saúde e educação.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#contato" data-i18n="hero_cta1">Iniciar um projeto</a>
+        <a class="btn btn-ghost" href="#servicos" data-i18n="hero_cta2">Ver serviços</a>
+      </div>
+    </div>
+    <div class="focus">
+      <ul>
+        <li data-i18n="f1">Desenvolvimento sob medida</li>
+        <li data-i18n="f2">Modernização de legado</li>
+        <li data-i18n="f3">Microsserviços</li>
+        <li data-i18n="f4">Cloud e DevOps</li>
+        <li data-i18n="f5">Integração de sistemas</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap intro">
+      <div>
+        <h2 data-i18n="intro_title">Consultoria com foco em engenharia</h2>
+        <p class="body" data-i18n="intro_body">Não somos uma fábrica de software genérica. Entendemos o problema de negócio antes de escolher a tecnologia, e cada decisão de arquitetura é pensada para operar em produção, com alta disponibilidade e custo sob controle.</p>
+      </div>
+      <div class="aud">
+        <article>
+          <h3 data-i18n="aud1_t">Para empresas em crescimento</h3>
+          <p data-i18n="aud1_p">Precisa lançar ou evoluir um produto com rapidez? Entregamos software pronto para produção desde as primeiras semanas, com uma base sólida para crescer.</p>
+          <a href="#servicos" data-i18n="more">Conhecer os serviços</a>
+        </article>
+        <article>
+          <h3 data-i18n="aud2_t">Para grandes empresas</h3>
+          <p data-i18n="aud2_p">Operações que não podem parar exigem segurança, observabilidade e integração com o que já existe. Atuamos na modernização e sustentação de plataformas críticas.</p>
+          <a href="#servicos" data-i18n="more">Conhecer os serviços</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="processo">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="proc_title">Como trabalhamos</h2>
+        <p data-i18n="proc_lead">Um processo claro, do primeiro contato até o sistema rodando em produção.</p>
+      </div>
+      <ol class="steps">
+        <li><h3 data-i18n="s1_t">Diagnóstico</h3><p data-i18n="s1_p">Entendemos o negócio, os sistemas atuais e o resultado esperado.</p></li>
+        <li><h3 data-i18n="s2_t">Proposta técnica</h3><p data-i18n="s2_p">Definimos escopo, arquitetura e plano de entrega com prazos claros.</p></li>
+        <li><h3 data-i18n="s3_t">Desenvolvimento</h3><p data-i18n="s3_p">Entregas em ciclos curtos, com código revisado, testes e acompanhamento contínuo.</p></li>
+        <li><h3 data-i18n="s4_t">Implantação</h3><p data-i18n="s4_p">Deploy automatizado com CI/CD, monitoramento e plano de rollback.</p></li>
+        <li><h3 data-i18n="s5_t">Evolução</h3><p data-i18n="s5_p">Suporte e melhorias contínuas conforme a operação cresce.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="svc_title">Serviços</h2>
+        <p data-i18n="svc_lead">Do desenho da arquitetura à sustentação em produção.</p>
+      </div>
+      <div class="svc">
+        <article><div class="mark"><i></i><i></i><i></i></div><h3 data-i18n="v1_t">Desenvolvimento sob medida</h3><p data-i18n="v1_p">Sistemas back-end e front-end construídos para a operação e os objetivos de cada cliente.</p></article>
+        <article><div class="mark"><i></i><i></i><i></i></div><h3 data-i18n="v2_t">Modernização de legado</h3><p data-i18n="v2_p">Migração e reestruturação de sistemas antigos para reduzir dívida técnica e ganhar desempenho e segurança.</p></article>
+        <article><div class="mark"><i></i><i></i><i></i></div><h3 data-i18n="v3_t">Microsserviços e eventos</h3><p data-i18n="v3_p">Arquiteturas distribuídas e mensageria de alto volume, preparadas para escalar sem perder confiabilidade.</p></article>
+        <article><div class="mark"><i></i><i></i><i></i></div><h3 data-i18n="v4_t">Cloud e DevOps</h3><p data-i18n="v4_p">Infraestrutura em AWS e Azure, containers, Kubernetes e pipelines de entrega automatizados.</p></article>
+        <article><div class="mark"><i></i><i></i><i></i></div><h3 data-i18n="v5_t">Integração de sistemas</h3><p data-i18n="v5_p">Integração confiável entre plataformas, APIs e serviços de terceiros.</p></article>
+        <article><div class="mark"><i></i><i></i><i></i></div><h3 data-i18n="v6_t">Consultoria técnica</h3><p data-i18n="v6_p">Revisão de arquitetura, orientação técnica e apoio sênior a times internos de desenvolvimento.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="cases">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="cases_title">Cases</h2>
+        <p data-i18n="cases_lead">Resultados de projetos com participação da nossa engenharia.</p>
+      </div>
+      <div class="cases">
+        <article class="case"><div class="num" data-i18n="c1_n"></div><div class="key" data-i18n="c1_k"></div><div class="sector" data-i18n="c1_s"></div><h3 data-i18n="c1_t"></h3><p class="d" data-i18n="c1_d"></p><div class="tech" data-i18n="c1_x"></div></article>
+        <article class="case"><div class="num" data-i18n="c2_n"></div><div class="key" data-i18n="c2_k"></div><div class="sector" data-i18n="c2_s"></div><h3 data-i18n="c2_t"></h3><p class="d" data-i18n="c2_d"></p><div class="tech" data-i18n="c2_x"></div></article>
+        <article class="case"><div class="num" data-i18n="c3_n"></div><div class="key" data-i18n="c3_k"></div><div class="sector" data-i18n="c3_s"></div><h3 data-i18n="c3_t"></h3><p class="d" data-i18n="c3_d"></p><div class="tech" data-i18n="c3_x"></div></article>
+        <article class="case"><div class="num" data-i18n="c4_n"></div><div class="key" data-i18n="c4_k"></div><div class="sector" data-i18n="c4_s"></div><h3 data-i18n="c4_t"></h3><p class="d" data-i18n="c4_d"></p><div class="tech" data-i18n="c4_x"></div></article>
+      </div>
+      <p class="note" data-i18n="cases_note">Nomes de clientes omitidos por acordo de confidencialidade.</p>
+    </div>
+  </section>
+
+  <section id="tecnologias">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="tech_title">Tecnologias</h2>
+        <p data-i18n="tech_lead">Um ecossistema consolidado para sistemas corporativos de alta escala.</p>
+      </div>
+      <ul class="stack">
+        <li>.NET</li><li>C#</li><li>ASP.NET Core</li><li>React</li><li>Angular</li><li>TypeScript</li><li>AWS</li><li>Azure</li><li>Kafka</li><li>Docker</li><li>Kubernetes</li><li>SQL Server</li><li>PostgreSQL</li><li>Redis</li>
+      </ul>
+      <div class="sectors">
+        <div><strong data-i18n="sec1">Financeiro</strong><span data-i18n="sec1_p">Bancos e fintechs</span></div>
+        <div><strong data-i18n="sec2">Varejo</strong><span data-i18n="sec2_p">Operações de alto volume</span></div>
+        <div><strong data-i18n="sec3">Saúde</strong><span data-i18n="sec3_p">Sistemas e integrações</span></div>
+        <div><strong data-i18n="sec4">Educação</strong><span data-i18n="sec4_p">Gestão e dados acadêmicos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contato">
+    <div class="wrap">
+      <div class="box contact">
+        <div class="contact-text">
+          <h2 data-i18n="cta_title">Tem um sistema que não pode parar?</h2>
+          <p data-i18n="cta_lead">Conte qual é o desafio. Retornamos com uma análise inicial e os próximos passos.</p>
+          <p class="direct"><span data-i18n="direct">Prefere escrever direto?</span> <a class="js-mail js-mail-text" href="#contato"></a></p>
+        </div>
+        <form id="contact-form" novalidate>
+          <div class="row2">
+            <div class="field"><label for="f-name" data-i18n="l_name">Nome</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="f-email" data-i18n="l_email">E-mail corporativo</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-company" data-i18n="l_company">Empresa</label><input id="f-company" name="company" type="text" autocomplete="organization"></div>
+            <div class="field"><label for="f-type" data-i18n="l_type">Tipo de projeto</label>
+              <select id="f-type" name="type">
+                <option value="new" data-i18n="o1">Novo sistema</option>
+                <option value="modern" data-i18n="o2">Modernização de legado</option>
+                <option value="integration" data-i18n="o3">Integração de sistemas</option>
+                <option value="cloud" data-i18n="o4">Cloud e DevOps</option>
+                <option value="consulting" data-i18n="o5">Consultoria técnica</option>
+                <option value="other" data-i18n="o6">Outro</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="f-msg" data-i18n="l_msg">Conte sobre o projeto</label><textarea id="f-msg" name="message" rows="5" required></textarea></div>
+          <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="actions">
+            <button type="submit" class="btn btn-primary" data-i18n="send">Enviar mensagem</button>
+            <p id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="#top" aria-label="CN Software Consulting">
+          <svg viewBox="6 28 112 58" aria-hidden="true"><g fill="none" stroke="#F4F7FB" stroke-width="13"><path d="M54.97 43.03 A24 24 0 1 0 54.97 76.97"/><path d="M76 84 V58 A17 17 0 0 1 110 58 V84"/></g><rect x="50" y="53.5" width="20" height="13" rx="6.5" fill="#F2B84B"/></svg>
+          <span>Software<small>Consulting</small></span>
+        </a>
+        <p data-i18n="foot_desc">Engenharia de software para sistemas que não podem parar. Brasil.</p>
+      </div>
+      <div>
+        <h4 data-i18n="foot_company">Empresa</h4>
+        <ul>
+          <li><a href="#servicos" data-i18n="nav_services">Serviços</a></li>
+          <li><a href="#processo" data-i18n="nav_process">Como trabalhamos</a></li>
+          <li><a href="#cases" data-i18n="nav_cases">Cases</a></li>
+          <li><a href="#tecnologias" data-i18n="nav_tech">Tecnologias</a></li>
+          <li><a href="#contato" data-i18n="nav_contact">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="nav_services">Serviços</h4>
+        <ul>
+          <li><a href="#servicos" data-i18n="v1_t">Desenvolvimento sob medida</a></li>
+          <li><a href="#servicos" data-i18n="v2_t">Modernização de legado</a></li>
+          <li><a href="#servicos" data-i18n="v3_t">Microsserviços e eventos</a></li>
+          <li><a href="#servicos" data-i18n="v6_t">Consultoria técnica</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="foot_connect">Contato</h4>
+        <ul>
+          <li><a class="js-mail" href="#contato" data-i18n="foot_mail">E-mail</a></li>
+          <li><a class="js-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> CN Software Consulting. <span data-i18n="rights">Todos os direitos reservados.</span></span>
+      <span class="js-cnpj">CNPJ [00.000.000/0001-00]</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== Configuração: troque estes valores antes de publicar ===== */
+const CONFIG = {
+  email: "contato@seudominio.com.br",              // e-mail exibido no site
+  formTo: "caiquenevesdesenvolvimento@gmail.com",   // e-mail que recebe as mensagens do formulário
+  linkedin: "https://www.linkedin.com/company/SEU-PERFIL",
+  cnpj: "CNPJ [00.000.000/0001-00]"
+};
+/* ================================================================ */
+
+const I18N = {
+  pt: {
+    title: "CN Software Consulting — Engenharia de software para sistemas que não podem parar",
+    nav_services:"Serviços", nav_process:"Como trabalhamos", nav_tech:"Tecnologias", nav_contact:"Contato", nav_cta:"Fale conosco",
+    hero_title:"Engenharia de software para sistemas que não podem parar.",
+    hero_lead:"Desenvolvemos, modernizamos e sustentamos sistemas críticos para empresas dos setores financeiro, varejo, saúde e educação.",
+    hero_cta1:"Iniciar um projeto", hero_cta2:"Ver serviços",
+    f1:"Desenvolvimento sob medida", f2:"Modernização de legado", f3:"Microsserviços", f4:"Cloud e DevOps", f5:"Integração de sistemas",
+    intro_title:"Consultoria com foco em engenharia",
+    intro_body:"Não somos uma fábrica de software genérica. Entendemos o problema de negócio antes de escolher a tecnologia, e cada decisão de arquitetura é pensada para operar em produção, com alta disponibilidade e custo sob controle.",
+    aud1_t:"Para empresas em crescimento", aud1_p:"Precisa lançar ou evoluir um produto com rapidez? Entregamos software pronto para produção desde as primeiras semanas, com uma base sólida para crescer.",
+    aud2_t:"Para grandes empresas", aud2_p:"Operações que não podem parar exigem segurança, observabilidade e integração com o que já existe. Atuamos na modernização e sustentação de plataformas críticas.",
+    more:"Conhecer os serviços",
+    proc_title:"Como trabalhamos", proc_lead:"Um processo claro, do primeiro contato até o sistema rodando em produção.",
+    s1_t:"Diagnóstico", s1_p:"Entendemos o negócio, os sistemas atuais e o resultado esperado.",
+    s2_t:"Proposta técnica", s2_p:"Definimos escopo, arquitetura e plano de entrega com prazos claros.",
+    s3_t:"Desenvolvimento", s3_p:"Entregas em ciclos curtos, com código revisado, testes e acompanhamento contínuo.",
+    s4_t:"Implantação", s4_p:"Deploy automatizado com CI/CD, monitoramento e plano de rollback.",
+    s5_t:"Evolução", s5_p:"Suporte e melhorias contínuas conforme a operação cresce.",
+    svc_title:"Serviços", svc_lead:"Do desenho da arquitetura à sustentação em produção.",
+    v1_t:"Desenvolvimento sob medida", v1_p:"Sistemas back-end e front-end construídos para a operação e os objetivos de cada cliente.",
+    v2_t:"Modernização de legado", v2_p:"Migração e reestruturação de sistemas antigos para reduzir dívida técnica e ganhar desempenho e segurança.",
+    v3_t:"Microsserviços e eventos", v3_p:"Arquiteturas distribuídas e mensageria de alto volume, preparadas para escalar sem perder confiabilidade.",
+    v4_t:"Cloud e DevOps", v4_p:"Infraestrutura em AWS e Azure, containers, Kubernetes e pipelines de entrega automatizados.",
+    v5_t:"Integração de sistemas", v5_p:"Integração confiável entre plataformas, APIs e serviços de terceiros.",
+    v6_t:"Consultoria técnica", v6_p:"Revisão de arquitetura, orientação técnica e apoio sênior a times internos de desenvolvimento.",
+    tech_title:"Tecnologias", tech_lead:"Um ecossistema consolidado para sistemas corporativos de alta escala.",
+    sec1:"Financeiro", sec1_p:"Bancos e fintechs", sec2:"Varejo", sec2_p:"Operações de alto volume",
+    sec3:"Saúde", sec3_p:"Sistemas e integrações", sec4:"Educação", sec4_p:"Gestão e dados acadêmicos",
+    cta_title:"Tem um sistema que não pode parar?", cta_lead:"Conte qual é o desafio. Retornamos com uma análise inicial e os próximos passos.", cta_btn:"Enviar e-mail",
+    foot_desc:"Engenharia de software para sistemas que não podem parar. Brasil.",
+    foot_company:"Empresa", foot_connect:"Contato", foot_mail:"E-mail", rights:"Todos os direitos reservados.",
+    nav_cases:"Cases", cases_title:"Cases", cases_lead:"Resultados de projetos com participação da nossa engenharia.",
+    cases_note:"Nomes de clientes omitidos por acordo de confidencialidade.",
+    c1_n:"30M+", c1_k:"eventos por mês", c1_s:"Setor bancário", c1_t:"Plataforma de notificações para milhões de clientes",
+    c1_d:"Substituição de um gateway de SMS terceirizado por uma plataforma própria de alertas de antifraude, compras e senhas. Economia de R$ 400 mil por ano e aumento de 30% na satisfação dos clientes.",
+    c1_x:".NET Core · Kafka · Clean Architecture · CI/CD",
+    c2_n:"−20%", c2_k:"no custo de cloud", c2_s:"Indústria farmacêutica", c2_t:"Revisão de custos da infraestrutura AWS",
+    c2_d:"Reestruturação do ambiente com Terraform e CI/CD, rightsizing de EC2, RDS e Lambda e remoção de recursos ociosos, sem perda de desempenho.",
+    c2_x:"AWS · Terraform · FinOps",
+    c3_n:"45 → 10 min", c3_k:"para diagnosticar incidentes", c3_s:"Tecnologia B2B global", c3_t:"Plataforma de inventário e compras para times globais",
+    c3_d:"APIs .NET Core com CQRS e SPAs em Angular e React. Cobertura de testes de 42% para 85% e metade dos incidentes em produção.",
+    c3_x:".NET Core · Angular · React · SignalR · Grafana",
+    c4_n:"R$ 200 mil", c4_k:"de economia por ano", c4_s:"Indústria", c4_t:"RPA de análise de balanço para a controladoria",
+    c4_d:"Robô que analisa o balanço mensal e aponta anomalias automaticamente. A auditoria deixou de exigir viagens todo mês: os auditores só se deslocam quando o volume de anomalias pede verificação presencial.",
+    c4_x:"RPA · Controladoria · Detecção de anomalias",
+    direct:"Prefere escrever direto?", l_name:"Nome", l_email:"E-mail corporativo", l_company:"Empresa", l_type:"Tipo de projeto",
+    o1:"Novo sistema", o2:"Modernização de legado", o3:"Integração de sistemas", o4:"Cloud e DevOps", o5:"Consultoria técnica", o6:"Outro",
+    l_msg:"Conte sobre o projeto", send:"Enviar mensagem", sending:"Enviando...",
+    f_err:"Preencha nome, um e-mail válido e a mensagem.", f_ok:"Mensagem enviada. Retornaremos em breve.",
+    f_fail:"Não foi possível enviar agora. Escreva para o e-mail ao lado.",
+    mail_subject:"Contato pelo site"
+  },
+  en: {
+    title: "CN Software Consulting — Software engineering for systems that can't stop",
+    nav_services:"Services", nav_process:"How we work", nav_tech:"Technology", nav_contact:"Contact", nav_cta:"Contact us",
+    hero_title:"Software engineering for systems that can't stop.",
+    hero_lead:"We build, modernize, and support business-critical systems for companies in financial services, retail, healthcare, and education.",
+    hero_cta1:"Start a project", hero_cta2:"View services",
+    f1:"Custom development", f2:"Legacy modernization", f3:"Microservices", f4:"Cloud & DevOps", f5:"Systems integration",
+    intro_title:"Consulting built on engineering",
+    intro_body:"We are not a generic software shop. We understand the business problem before choosing the technology, and every architecture decision is made to run in production, with high availability and controlled costs.",
+    aud1_t:"For growing companies", aud1_p:"Need to launch or evolve a product fast? We deliver production-ready software from the first weeks, on a solid foundation built to grow.",
+    aud2_t:"For enterprises", aud2_p:"Operations that can't stop demand security, observability, and integration with existing systems. We modernize and support mission-critical platforms.",
+    more:"Explore our services",
+    proc_title:"How we work", proc_lead:"A clear process, from the first conversation to a system running in production.",
+    s1_t:"Discovery", s1_p:"We learn about your business, your current systems, and the outcome you expect.",
+    s2_t:"Technical proposal", s2_p:"We define scope, architecture, and a delivery plan with clear timelines.",
+    s3_t:"Development", s3_p:"Short delivery cycles with reviewed code, testing, and continuous follow-up.",
+    s4_t:"Deployment", s4_p:"Automated CI/CD deployment, monitoring, and a rollback plan.",
+    s5_t:"Evolution", s5_p:"Ongoing support and improvements as your operation grows.",
+    svc_title:"Services", svc_lead:"From architecture design to production support.",
+    v1_t:"Custom development", v1_p:"Back-end and front-end systems built around each client's operations and goals.",
+    v2_t:"Legacy modernization", v2_p:"Migration and re-architecture of outdated systems to reduce technical debt and improve performance and security.",
+    v3_t:"Microservices & events", v3_p:"Distributed architectures and high-volume messaging, designed to scale without losing reliability.",
+    v4_t:"Cloud & DevOps", v4_p:"AWS and Azure infrastructure, containers, Kubernetes, and automated delivery pipelines.",
+    v5_t:"Systems integration", v5_p:"Reliable integration between platforms, APIs, and third-party services.",
+    v6_t:"Technical consulting", v6_p:"Architecture reviews, technical guidance, and senior support for in-house engineering teams.",
+    tech_title:"Technology", tech_lead:"A proven ecosystem for high-scale enterprise systems.",
+    sec1:"Financial services", sec1_p:"Banks and fintechs", sec2:"Retail", sec2_p:"High-volume operations",
+    sec3:"Healthcare", sec3_p:"Systems and integrations", sec4:"Education", sec4_p:"Academic management and data",
+    cta_title:"Running a system that can't stop?", cta_lead:"Tell us about your challenge. We'll get back with an initial assessment and next steps.", cta_btn:"Send an email",
+    foot_desc:"Software engineering for systems that can't stop. Brazil.",
+    foot_company:"Company", foot_connect:"Contact", foot_mail:"Email", rights:"All rights reserved.",
+    nav_cases:"Case studies", cases_title:"Case studies", cases_lead:"Results from projects delivered with our engineering.",
+    cases_note:"Client names omitted under confidentiality agreements.",
+    c1_n:"30M+", c1_k:"events per month", c1_s:"Banking", c1_t:"Notification platform for millions of customers",
+    c1_d:"Replaced an outsourced SMS gateway with an in-house platform for fraud, purchase, and password alerts. R$ 400K in annual savings and a 30% increase in customer satisfaction.",
+    c1_x:".NET Core · Kafka · Clean Architecture · CI/CD",
+    c2_n:"−20%", c2_k:"in cloud costs", c2_s:"Pharmaceutical industry", c2_t:"AWS infrastructure cost review",
+    c2_d:"Restructured the environment with Terraform and CI/CD, right-sized EC2, RDS, and Lambda, and removed idle resources with no loss of performance.",
+    c2_x:"AWS · Terraform · FinOps",
+    c3_n:"45 → 10 min", c3_k:"to diagnose incidents", c3_s:"Global B2B technology", c3_t:"Inventory and procurement platform for global teams",
+    c3_d:".NET Core APIs with CQRS and Angular and React SPAs. Test coverage raised from 42% to 85% and production incidents cut in half.",
+    c3_x:".NET Core · Angular · React · SignalR · Grafana",
+    c4_n:"R$ 200K", c4_k:"in annual savings", c4_s:"Manufacturing", c4_t:"Balance sheet analysis RPA for the controllership team",
+    c4_d:"A bot that analyzes the monthly balance sheet and flags anomalies automatically. Audits no longer require monthly travel: auditors only go on site when the volume of anomalies calls for in-person review.",
+    c4_x:"RPA · Controllership · Anomaly detection",
+    direct:"Prefer to write directly?", l_name:"Name", l_email:"Work email", l_company:"Company", l_type:"Project type",
+    o1:"New system", o2:"Legacy modernization", o3:"Systems integration", o4:"Cloud & DevOps", o5:"Technical consulting", o6:"Other",
+    l_msg:"Tell us about the project", send:"Send message", sending:"Sending...",
+    f_err:"Please fill in your name, a valid email, and your message.", f_ok:"Message sent. We'll get back to you soon.",
+    f_fail:"We couldn't send it right now. Please write to the email address shown.",
+    mail_subject:"Website inquiry"
+  }
+};
+
+let currentLang = "pt";
+function setLang(lang){
+  const d = I18N[lang] || I18N.pt;
+  document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
+  document.title = d.title;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const k = el.getAttribute("data-i18n");
+    if (d[k] !== undefined) el.textContent = d[k];
+  });
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  const href = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent(d.mail_subject);
+  document.querySelectorAll(".js-mail").forEach(a => a.setAttribute("href", href));
+  document.querySelectorAll(".js-mail-text").forEach(a => a.textContent = CONFIG.email);
+  currentLang = lang;
+  try { localStorage.setItem("cn-lang", lang); } catch (e) {}
+}
+
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+document.querySelectorAll(".js-linkedin").forEach(a => a.setAttribute("href", CONFIG.linkedin));
+document.querySelectorAll(".js-cnpj").forEach(s => s.textContent = CONFIG.cnpj);
+document.getElementById("year").textContent = new Date().getFullYear();
+
+let initial = "pt";
+try { initial = localStorage.getItem("cn-lang") || ((navigator.language || "pt").toLowerCase().startsWith("pt") ? "pt" : "en"); } catch (e) {}
+setLang(initial);
+
+/* in-page navigation (works in any host, including sandboxed previews) */
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click", e => {
+  const id = a.getAttribute("href").slice(1);
+  const target = id ? document.getElementById(id) : null;
+  if (!target) return;
+  e.preventDefault();
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const y = target.getBoundingClientRect().top + window.pageYOffset - (id === "top" ? 0 : 72);
+  window.scrollTo({ top: id === "top" ? 0 : y, behavior: reduce ? "auto" : "smooth" });
+  try { history.replaceState(null, "", "#" + id); } catch (err) {}
+}));
+
+/* contact form: sends to CONFIG.formTo via FormSubmit (no backend needed) */
+const form = document.getElementById("contact-form");
+const statusEl = document.getElementById("form-status");
+const F = form.elements;
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  const d = I18N[currentLang];
+  const name = F.name.value.trim(), email = F.email.value.trim(), msg = F.message.value.trim();
+  const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  F.name.setAttribute("aria-invalid", String(!name));
+  F.email.setAttribute("aria-invalid", String(!validEmail));
+  F.message.setAttribute("aria-invalid", String(!msg));
+  statusEl.className = "";
+  if (!name || !validEmail || !msg) { statusEl.textContent = d.f_err; statusEl.className = "err"; return; }
+  if (F._honey.value) return;
+  const btn = form.querySelector("button[type=submit]");
+  btn.disabled = true; btn.textContent = d.sending; statusEl.textContent = "";
+  const typeLabel = F.type.options[F.type.selectedIndex].textContent;
+  try {
+    const res = await fetch("https://formsubmit.co/ajax/" + encodeURIComponent(CONFIG.formTo), {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        _subject: "Novo contato pelo site: " + typeLabel + " (" + name + ")",
+        _template: "table", _captcha: "false", _replyto: email,
+        Nome: name, "E-mail": email, Empresa: F.company.value.trim() || "-",
+        "Tipo de projeto": typeLabel, Mensagem: msg, Idioma: currentLang.toUpperCase()
+      })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || String(data.success) !== "true") throw new Error("send failed");
+    form.reset();
+    statusEl.textContent = d.f_ok; statusEl.className = "ok";
+  } catch (err) {
+    statusEl.textContent = d.f_fail; statusEl.className = "err";
+  } finally {
+    btn.disabled = false; btn.textContent = d.send;
+  }
+});
+
+/* mobile menu */
+const header = document.querySelector("header");
+const menuBtn = document.querySelector(".menu");
+menuBtn.addEventListener("click", () => {
+  const open = header.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(open));
+});
+document.querySelectorAll(".links a").forEach(a => a.addEventListener("click", () => {
+  header.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false");
+}));
+
+/* hero event lanes (brand motif) */
+(function lanes(){
+  const svg = document.getElementById("lanes");
+  const W = 1600, H = 600, NS = "http://www.w3.org/2000/svg";
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  let seed = 7;
+  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const count = 11;
+  for (let i = 0; i < count; i++) {
+    const y = Math.round(H * (0.07 + 0.86 * i / (count - 1)));
+    const base = document.createElementNS(NS, "line");
+    base.setAttribute("x1", 0); base.setAttribute("x2", W);
+    base.setAttribute("y1", y); base.setAttribute("y2", y);
+    base.setAttribute("stroke", "#3A6294"); base.setAttribute("stroke-opacity", ".35");
+    svg.appendChild(base);
+    const row = document.createElementNS(NS, "g");
+    row.setAttribute("class", "row");
+    row.style.animationDuration = (38 + rnd() * 40).toFixed(1) + "s";
+    const dashes = [];
+    let x = rnd() * 80;
+    while (x < W) {
+      const L = [14, 22, 36, 52, 80][Math.floor(rnd() * 5)];
+      dashes.push({ x, L, amber: rnd() < 0.08 });
+      x += L + 18 + rnd() * 110;
+    }
+    for (const off of [0, W]) {
+      for (const d of dashes) {
+        const r = document.createElementNS(NS, "rect");
+        r.setAttribute("x", (d.x + off).toFixed(1)); r.setAttribute("y", y - 3);
+        r.setAttribute("width", d.L); r.setAttribute("height", 6); r.setAttribute("rx", 3);
+        r.setAttribute("fill", d.amber ? "#F2B84B" : "#6EA0E1");
+        r.setAttribute("fill-opacity", d.amber ? ".85" : ".55");
+        row.appendChild(r);
+      }
+    }
+    svg.appendChild(row);
+  }
+})();
+</script>
+</body>
+</html>

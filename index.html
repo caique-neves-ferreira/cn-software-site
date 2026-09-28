@@ -11,188 +11,287 @@
 <meta property="og:title" content="CFN Software Consulting — Consultoria e Desenvolvimento .NET">
 <meta property="og:description" content="Engenharia de software para sistemas que não podem parar.">
 <meta property="og:locale" content="pt_BR">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://cfnsoftware.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CFN Software Consulting — Engenharia de software para sistemas que não podem parar.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#060F1C">
+<link rel="alternate" hreflang="pt-BR" href="https://cfnsoftware.com/">
+<link rel="alternate" hreflang="en" href="https://cfnsoftware.com/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://cfnsoftware.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://cfnsoftware.com/#org",
+      "name": "CFN Software Consulting",
+      "legalName": "Caique Ferreira Silva Neves Desenvolvedor de Sistemas LTDA",
+      "url": "https://cfnsoftware.com/",
+      "logo": "https://cfnsoftware.com/og-image.png",
+      "image": "https://cfnsoftware.com/og-image.png",
+      "description": "Consultoria em engenharia de software .NET para sistemas de missão crítica: backends orientados a eventos, APIs, modernização de legado e cloud.",
+      "slogan": "Engenharia de software para sistemas que não podem parar.",
+      "email": "caiquenevesdesenvolvimento@gmail.com",
+      "address": { "@type": "PostalAddress", "addressCountry": "BR" },
+      "areaServed": ["BR", "US", "EU"],
+      "knowsLanguage": ["pt-BR", "en"],
+      "knowsAbout": [".NET", "C#", "AWS", "Apache Kafka", "Microservices", "Event-driven architecture", "Legacy modernization", "Angular", "React"],
+      "founder": { "@id": "https://cfnsoftware.com/#founder" },
+      "sameAs": ["https://www.linkedin.com/company/cnsoftwareconsulting"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://cfnsoftware.com/#founder",
+      "name": "Caique Ferreira Silva Neves",
+      "alternateName": ["Caique Neves", "Caique Ferreira Neves"],
+      "jobTitle": "Founder & Principal Engineer",
+      "worksFor": { "@id": "https://cfnsoftware.com/#org" },
+      "knowsAbout": [".NET", "C#", "AWS", "Apache Kafka", "Microservices"],
+      "sameAs": [
+        "https://www.linkedin.com/in/caique-ferreira-neves",
+        "https://github.com/caique-neves-ferreira"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cfnsoftware.com/#website",
+      "url": "https://cfnsoftware.com/",
+      "name": "CFN Software Consulting",
+      "inLanguage": ["pt-BR", "en"],
+      "publisher": { "@id": "https://cfnsoftware.com/#org" }
+    }
+  ]
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060F1C'/%3E%3Cpath d='M30 20a14 14 0 1 0 0 24' fill='none' stroke='%23EAF0F7' stroke-width='8'/%3E%3Crect x='34' y='28' width='14' height='9' rx='4.5' fill='%23F2B84B'/%3E%3C/svg%3E">
 <meta name="description" content="Consultoria em sistemas .NET de alta escala para bancos, fintechs e varejo. Backends orientados a eventos, APIs, modernização de legado e aplicações fullstack.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0C2038; --ink-2:#10305A; --lane:#6EA0E1; --amber:#F2B84B;
-  --bg:#F5F7FA; --surface:#FFFFFF; --text:#1B2A3A; --muted:#566B82; --line:#DCE3EC;
-  --hero-text:#F4F7FB; --hero-muted:#B9CCE3;
-  box-sizing:border-box;
+  --bg:#060F1C; --bg-2:#081628; --surface:#0B1B30; --surface-2:#0F2340;
+  --ink:#060F1C; --ink-2:#0C2038; --lane:#6EA0E1; --amber:#F2B84B; --amber-soft:rgba(242,184,75,.12);
+  --text:#EAF0F7; --muted:#8FA3BB; --dim:#5F7590; --line:rgba(120,160,215,.14); --line-2:rgba(120,160,215,.24);
+  --hero-text:#EAF0F7; --hero-muted:#A9BCD3;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  color-scheme:dark; box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0A1A2E; --surface:#0F2440; --text:#E6EEF7; --muted:#9DB3CC; --line:#1F3A5E;
-  }
-}
-:root[data-theme="dark"]{ --bg:#0A1A2E; --surface:#0F2440; --text:#E6EEF7; --muted:#9DB3CC; --line:#1F3A5E; }
 *,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth; scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
-body{margin:0; background:var(--bg); color:var(--text); font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif; font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth; scroll-padding-top:calc(72px + env(safe-area-inset-top,0px)); background:var(--bg)}
+body{margin:0; background:var(--bg); color:var(--text); font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif; font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px); background-size:88px 88px; background-attachment:fixed}
 a{color:inherit}
 img{max-width:100%}
-.wrap{max-width:1080px; margin:0 auto; padding:0 24px}
+.wrap{max-width:1120px; margin:0 auto; padding:0 24px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--amber); outline-offset:2px}
 
 /* header */
-header{position:sticky; top:env(safe-area-inset-top,0px); z-index:10; background:var(--ink); color:var(--hero-text); border-bottom:1px solid rgba(110,160,225,.18)}
-.bar{display:flex; align-items:center; justify-content:space-between; height:64px; gap:16px}
-.brand{display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:700; font-size:18px; letter-spacing:-.01em}
+header{position:sticky; top:env(safe-area-inset-top,0px); z-index:10; background:rgba(6,15,28,.82); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--line)}
+.bar{display:flex; align-items:center; justify-content:space-between; height:68px; gap:16px}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:600; font-size:17px; color:var(--text)}
 .brand svg{width:54px; height:23px; flex:none}
-
-nav{display:flex; align-items:center; gap:22px; font-size:15px}
-nav a{text-decoration:none; color:var(--hero-muted)}
-nav a:hover{color:var(--hero-text)}
-.lang{display:flex; border:1px solid rgba(185,204,227,.35); border-radius:6px; overflow:hidden}
-.lang button{background:none; border:0; color:var(--hero-muted); font:600 13px/1 inherit; font-family:inherit; padding:8px 10px; cursor:pointer}
+.brand span{white-space:nowrap}
+@media (max-width:420px){ .brand{font-size:15px; gap:8px} .brand svg{width:46px; height:20px} }
+nav{display:flex; align-items:center; gap:26px; font-size:15px}
+nav a{text-decoration:none; color:var(--muted); transition:color .2s}
+nav a:hover{color:var(--text)}
+.lang{display:flex; border:1px solid var(--line-2); border-radius:6px; overflow:hidden}
+.lang button{background:none; border:0; color:var(--muted); font:600 12px/1 var(--mono); padding:8px 10px; cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--amber); color:var(--ink)}
-.lang button:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{outline:2px solid var(--amber); outline-offset:2px}
-@media (max-width:760px){ nav .navlink{display:none} }
+@media (max-width:820px){ nav .navlink{display:none} }
 
 /* hero */
-.hero{position:relative; background:linear-gradient(180deg,var(--ink),var(--ink-2)); color:var(--hero-text); overflow:hidden}
+.hero{position:relative; overflow:hidden; border-bottom:1px solid var(--line); background:radial-gradient(900px 500px at 85% 20%,rgba(110,160,225,.14),transparent 70%),radial-gradient(700px 400px at 10% 100%,rgba(242,184,75,.07),transparent 70%)}
 .lanes{position:absolute; inset:0; pointer-events:none}
-.lanes span{position:absolute; left:0; right:0; height:1px; background:rgba(58,98,148,.35)}
-.lanes b{position:absolute; top:-3px; height:6px; border-radius:3px; background:var(--lane); opacity:.55; animation:flow linear infinite}
-.lanes b.a{background:var(--amber); opacity:.85}
+.lanes span{position:absolute; left:0; right:0; height:1px; background:rgba(110,160,225,.10)}
+.lanes b{position:absolute; top:-2px; height:4px; border-radius:2px; background:var(--lane); opacity:.45; animation:flow linear infinite}
+.lanes b.a{background:var(--amber); opacity:.8}
 @keyframes flow{from{transform:translateX(-10vw)}to{transform:translateX(110vw)}}
-@media (prefers-reduced-motion: reduce){ .lanes b{animation:none} }
-.hero-inner{position:relative; padding:96px 0 88px; max-width:760px}
-.hero h1{font-size:clamp(34px,6vw,58px); line-height:1.08; letter-spacing:-.025em; margin:0 0 20px; font-weight:700}
-.hero p{font-size:clamp(17px,2.2vw,20px); color:var(--hero-muted); margin:0 0 32px; max-width:620px}
-.cta{display:inline-block; background:var(--amber); color:var(--ink); font-weight:600; text-decoration:none; padding:14px 22px; border-radius:6px}
-.cta:hover{filter:brightness(1.05)}
-.hero .ghost{margin-left:18px; color:var(--hero-text); font-weight:500}
-.stack{margin-top:48px; display:flex; flex-wrap:wrap; gap:10px 18px; font-size:14px; font-weight:600; color:var(--hero-text)}
-.stack span{display:flex; align-items:center; gap:18px}
-.stack span:not(:last-child)::after{content:""; width:12px; height:5px; border-radius:3px; background:var(--amber); opacity:.9}
+@media (prefers-reduced-motion: reduce){ .lanes b{animation:none} html{scroll-behavior:auto} }
+.hero-inner{position:relative; padding:120px 0 104px; max-width:820px}
+.hero .kicker{display:inline-flex; align-items:center; gap:10px; font:500 14px/1.4 var(--mono); color:var(--amber); margin:0 0 24px; padding:6px 12px; border:1px solid rgba(242,184,75,.3); border-radius:999px; background:var(--amber-soft)}
+.hero .kicker::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--amber); box-shadow:0 0 12px var(--amber)}
+.hero h1{font-size:clamp(38px,6.6vw,72px); line-height:1.02; letter-spacing:-.035em; margin:0 0 24px; font-weight:700}
+.hero-inner > p[data-i18n="hero.sub"]{font-size:clamp(17px,2.1vw,20px); color:var(--hero-muted); margin:0 0 36px; max-width:640px}
+.cta{display:inline-block; background:var(--amber); color:var(--ink); font-weight:600; text-decoration:none; padding:14px 24px; border-radius:8px; transition:transform .15s, box-shadow .15s}
+.cta:hover{transform:translateY(-1px); box-shadow:0 8px 24px rgba(242,184,75,.25)}
+.hero .ghost{display:inline-block; margin-left:12px; padding:13px 22px; border:1px solid var(--line-2); border-radius:8px; color:var(--text); font-weight:500; text-decoration:none; transition:border-color .2s}
+.hero .ghost:hover{border-color:var(--lane)}
+.hero-note{margin:22px 0 0; font:400 13px/1.5 var(--mono); color:var(--dim)}
+@media (max-width:520px){ .hero .ghost{margin:12px 0 0} .hero-inner{padding:80px 0 72px} }
 
-/* sections */
-section{padding:88px 0}
-h2{font-size:clamp(26px,3.6vw,36px); line-height:1.15; letter-spacing:-.02em; margin:0 0 12px}
-.lead{color:var(--muted); max-width:640px; margin:0 0 48px}
+/* generic sections */
+section{padding:104px 0; position:relative}
+h2{font-size:clamp(30px,4.2vw,46px); line-height:1.08; letter-spacing:-.03em; margin:0 0 14px; font-weight:700}
+.lead{color:var(--muted); max-width:620px; margin:0 0 56px; font-size:18px}
+.sub-title{font-size:24px; margin:0 0 12px}
 
-.services{display:grid; grid-template-columns:1fr 1fr; gap:0 56px}
-.svc{padding:24px 0; border-top:1px solid var(--line)}
-.svc h3{margin:0 0 6px; font-size:19px; display:flex; align-items:center; gap:12px}
-.svc h3::before{content:""; flex:none; width:18px; height:5px; border-radius:3px; background:var(--lane)}
-.svc p{margin:0; color:var(--muted); font-size:16px}
-@media (max-width:760px){ .services{grid-template-columns:1fr} }
+/* trust */
+.trust{padding:44px 0; background:var(--bg-2)}
+.trust-label{margin:0 0 20px; font:500 13px/1.4 var(--mono); color:var(--dim)}
+.client-list{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:0}
+.client-list li{display:flex; flex-direction:column; justify-content:flex-start; align-items:flex-start; gap:4px; padding:6px 18px; border-left:1px solid var(--line); min-height:56px}
+.client-list li span{font-size:17px; font-weight:600; color:var(--hero-muted); letter-spacing:-.01em; white-space:nowrap}
+.client-list small{font-size:11.5px; color:var(--dim); line-height:1.35}
+.trust-note{margin:18px 0 0; font-size:13px; color:var(--dim)}
+:root:not([lang="en"]) .en-only{display:none}
+@media (max-width:960px){ .client-list{grid-template-columns:1fr 1fr; row-gap:14px} }
 
-.cases{background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
-.case{display:grid; grid-template-columns:220px 1fr; gap:32px; padding:32px 0; border-top:1px solid var(--line)}
+/* services */
+.services{display:grid; grid-template-columns:1fr 1fr; gap:0 64px; counter-reset:svc}
+.svc{padding:28px 0; border-top:1px solid var(--line); counter-increment:svc}
+.svc h3{margin:0 0 8px; font-size:20px; display:flex; align-items:baseline; gap:14px}
+.svc h3::before{content:counter(svc,decimal-leading-zero); font:500 13px var(--mono); color:var(--amber)}
+.svc:target h3{color:var(--amber)}
+.svc{scroll-margin-top:96px}
+.svc p{margin:0; color:var(--muted); font-size:16px; padding-left:34px}
+.stack-line{margin:48px 0 0; padding:18px 22px; border:1px solid var(--line); border-radius:10px; background:var(--surface); font:400 14px/1.9 var(--mono); color:var(--muted)}
+.stack-line span{color:var(--amber); margin-right:10px}
+@media (max-width:760px){ .services{grid-template-columns:1fr} .svc p{padding-left:0} }
+
+/* engagement models */
+.models{background:linear-gradient(180deg,var(--bg-2),var(--bg))}
+.model-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px}
+.model-grid article{position:relative; padding:32px; border:1px solid var(--line-2); border-radius:14px; background:linear-gradient(180deg,var(--surface-2),var(--surface)); overflow:hidden; transition:border-color .2s, transform .2s}
+.model-grid article::before{content:""; position:absolute; left:0; top:0; right:0; height:2px; background:linear-gradient(90deg,var(--amber),transparent)}
+.model-grid article:hover{border-color:rgba(242,184,75,.45); transform:translateY(-2px)}
+.model-grid h3{margin:0 0 12px; font-size:21px; letter-spacing:-.01em}
+.model-grid p{margin:0; color:var(--muted); font-size:16px}
+@media (max-width:860px){ .model-grid{grid-template-columns:1fr} }
+
+/* process */
+.steps{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:32px; position:relative}
+.steps::before{content:""; position:absolute; left:0; right:0; top:17px; height:1px; background:linear-gradient(90deg,var(--amber),var(--line-2) 40%,var(--line-2))}
+.steps li{position:relative}
+.steps .n{position:relative; display:grid; place-items:center; width:36px; height:36px; border-radius:50%; background:var(--bg); border:1px solid var(--amber); color:var(--amber); font:600 14px var(--mono); margin-bottom:20px}
+.steps h3{margin:0 0 8px; font-size:18px}
+.steps p{margin:0; color:var(--muted); font-size:15px; line-height:1.6}
+@media (max-width:860px){ .steps{grid-template-columns:1fr; gap:28px} .steps::before{left:17px; right:auto; top:0; bottom:0; width:1px; height:auto; background:var(--line-2)} .steps li{padding-left:56px} .steps .n{position:absolute; left:0; top:0} }
+
+/* cases */
+.cases{background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.case{display:grid; grid-template-columns:260px 1fr; gap:40px; padding:40px 0; border-top:1px solid var(--line)}
 .case:first-of-type{border-top:0; padding-top:0}
-.case .result{font-size:26px; font-weight:700; line-height:1.15; letter-spacing:-.02em; color:var(--text)}
-.case .result small{display:block; font-size:14px; font-weight:500; color:var(--muted); letter-spacing:0; margin-top:6px}
-.case .sector{display:inline-block; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); background:var(--amber); padding:4px 10px; border-radius:999px; margin-bottom:10px}
-.case h3{margin:0 0 8px; font-size:19px}
-.case p{margin:0 0 8px; color:var(--muted); font-size:16px}
-.case .tech{font-size:14px; color:var(--text); font-weight:500}
-@media (max-width:760px){ .case{grid-template-columns:1fr; gap:10px} }
+.case .result{font:600 clamp(34px,4.2vw,48px)/1.02 var(--mono); letter-spacing:-.04em; color:var(--amber)}
+.case .result small{display:block; font:400 14px/1.4 "IBM Plex Sans",system-ui,sans-serif; letter-spacing:0; color:var(--muted); margin-top:10px}
+.case .sector{display:inline-block; font:500 12px var(--mono); color:var(--lane); margin-bottom:8px}
+.case h3{margin:0 0 18px; font-size:22px; letter-spacing:-.015em}
+.case > div:last-child{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0 28px; align-content:start}
+.case > div:last-child > .sector,.case > div:last-child > h3,.case > div:last-child > .tech{grid-column:1/-1}
+.cs{margin:0 0 16px; color:var(--muted); font-size:15px; line-height:1.6; padding-top:12px; border-top:1px solid var(--line)}
+.cs > strong{display:block; font:500 12px var(--mono); color:var(--dim); margin-bottom:6px}
+.cs span strong{color:var(--text); font-weight:600}
+.case .tech{margin-top:4px; font:400 13px var(--mono); color:var(--dim)}
+@media (max-width:860px){ .case{grid-template-columns:1fr; gap:16px} .case > div:last-child{grid-template-columns:1fr} }
 
-.how{display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:start}
-.how ul{list-style:none; margin:0; padding:0}
-.how li{padding:14px 0; border-top:1px solid var(--line)}
-.how li strong{display:block}
-.how li span{color:var(--muted); font-size:16px}
-@media (max-width:760px){ .how{grid-template-columns:1fr; gap:24px} }
-
-/* footer */
-footer{background:#081729; color:var(--hero-muted); font-size:15px; padding:64px 0 32px}
-.ft-grid{display:grid; grid-template-columns:1.4fr 1fr 1.2fr 1fr; gap:40px}
-.ft-brand .brand{color:var(--hero-text); font-size:16px; font-weight:600}
-.ft-brand p{margin:16px 0 8px; max-width:280px; line-height:1.6}
-.ft-brand small{font-size:13px; opacity:.8}
-footer h4{margin:0 0 16px; font-size:15px; color:var(--hero-text)}
-footer ul{list-style:none; margin:0; padding:0; display:grid; gap:12px}
-footer ul a{color:var(--hero-muted); text-decoration:none}
-footer ul a:hover{color:var(--amber)}
-.ft-bottom{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:48px; padding-top:24px; border-top:1px solid rgba(185,204,227,.14); font-size:14px}
-.ft-li{color:var(--hero-muted); display:flex}
-.ft-li:hover{color:var(--amber)}
-.ft-li svg{width:22px; height:22px}
-@media (max-width:860px){ .ft-grid{grid-template-columns:1fr 1fr} }
-@media (max-width:520px){ .ft-grid{grid-template-columns:1fr} }
 /* industries */
-.industries{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px}
-.industries article,.tech-groups article{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:28px; display:flex; flex-direction:column; transition:border-color .2s, transform .2s}
-.industries article:hover,.tech-groups article:hover{border-color:var(--lane); transform:translateY(-2px)}
-.ico{width:40px; height:40px; border-radius:10px; display:grid; place-items:center; background:rgba(110,160,225,.14); color:var(--lane); margin-bottom:18px}
-.ico svg{width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round}
-.industries h3{margin:0 0 8px; font-size:19px}
-.industries p{margin:0 0 18px; color:var(--muted); font-size:15px; line-height:1.6; flex:1}
-.tags{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px}
-.tags li{display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:500; padding:4px 10px 4px 4px; border:1px solid var(--line); border-radius:999px; background:var(--bg); color:var(--text)}
-.tags b{display:grid; place-items:center; min-width:22px; height:22px; padding:0 4px; border-radius:6px; color:#fff; font-size:10px; font-weight:700; letter-spacing:-.02em}
-.techs{margin-top:64px; padding-top:48px; border-top:1px solid var(--line)}
-.techs .lead{margin-bottom:28px}
-.tech-groups{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px}
-.tech-groups h4{margin:0 0 14px; font-size:17px}
-.techs .sub-title{font-size:clamp(22px,2.6vw,28px); letter-spacing:-.01em; margin:0 0 12px}
-@media (max-width:980px){ .industries,.tech-groups{grid-template-columns:1fr 1fr} }
-@media (max-width:600px){ .industries,.tech-groups{grid-template-columns:1fr} }
+.industries{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; border-top:1px solid var(--line); border-left:1px solid var(--line)}
+.industries article{padding:32px 28px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); display:flex; flex-direction:column; transition:background .2s}
+.industries article:hover{background:var(--surface)}
+.ico{width:40px; height:40px; border-radius:10px; display:grid; place-items:center; background:rgba(110,160,225,.10); color:var(--lane); margin-bottom:20px}
+.ico svg{width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round}
+.industries h3{margin:0 0 10px; font-size:19px}
+.industries p{margin:0 0 18px; color:var(--muted); font-size:15px; line-height:1.65; flex:1}
+.industries .ind-stack{margin:0; font:400 12.5px var(--mono); color:var(--dim); flex:none}
+@media (max-width:980px){ .industries{grid-template-columns:1fr 1fr} }
+@media (max-width:600px){ .industries{grid-template-columns:1fr} }
 
-.results{margin-top:64px; padding-top:48px; border-top:1px solid var(--line)}
-.results .sub-title{font-size:clamp(22px,2.6vw,28px); letter-spacing:-.01em; margin:0 0 12px}
-.results .case{border-top:1px solid var(--line)}
-.results .case:first-of-type{border-top:0}
-
-.about{background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
-.about .principles article{background:var(--bg)}
 /* about */
-.about .eyebrow{display:inline-block; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--amber); margin-bottom:12px}
-.about-head .lead{margin-bottom:56px}
+.about{background:var(--bg)}
+.about-head .lead{margin-bottom:64px}
 .about h3{font-size:22px; letter-spacing:-.01em; margin:0}
-.about-why{display:grid; grid-template-columns:260px 1fr; gap:40px; padding:40px 0; border-top:1px solid var(--line)}
+.about-why,.about-lead{display:grid; grid-template-columns:260px 1fr; gap:48px; padding:44px 0; border-top:1px solid var(--line)}
 .about-why p{margin:0 0 16px; color:var(--muted)}
-.about-why p:last-child{margin:0}
-.about-how{padding:40px 0; border-top:1px solid var(--line)}
-.about-how .sub{color:var(--muted); margin:6px 0 28px}
-.principles{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
-.principles article{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:24px}
-.principles i{display:block; width:22px; height:6px; border-radius:3px; background:var(--amber); margin-bottom:18px}
+.about-why p:last-child{margin:0; color:var(--text)}
+.about-how{padding:44px 0; border-top:1px solid var(--line)}
+.about-how .sub{color:var(--muted); margin:6px 0 32px}
+.principles{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:32px}
+.principles article{padding-top:18px; border-top:2px solid var(--line-2)}
+.principles article:first-child{border-top-color:var(--amber)}
+.principles i{display:none}
 .principles h4{margin:0 0 8px; font-size:17px}
-.principles p{margin:0; color:var(--muted); font-size:15px; line-height:1.55}
-.facts{list-style:none; margin:28px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:0 32px}
-.facts li{padding:14px 0; border-top:1px solid var(--line)}
-.facts strong{display:block}
-.facts span{color:var(--muted); font-size:16px}
-.about-cta{display:flex; align-items:center; justify-content:space-between; gap:24px; margin-top:16px; padding:32px; border-radius:12px; background:linear-gradient(135deg,var(--ink),var(--ink-2)); color:var(--hero-text)}
-.about-cta p{margin:6px 0 0; color:var(--hero-muted)}
+.principles p{margin:0; color:var(--muted); font-size:15px; line-height:1.6}
+.founder{display:flex; gap:24px; align-items:flex-start}
+.avatar{flex:none; width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:var(--surface-2); color:var(--amber); font:600 18px var(--mono); border:1px solid rgba(242,184,75,.5)}
+.founder p{margin:0 0 12px; color:var(--muted)}
+.founder .f-name{margin:0; font-size:20px; font-weight:700; color:var(--text)}
+.founder .f-role{margin:2px 0 14px; font:400 14px var(--mono); color:var(--amber)}
+.f-li{display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:15px; text-decoration:none; color:var(--text)}
+.f-li svg{width:18px; height:18px; color:var(--lane)}
+.f-li:hover span{text-decoration:underline}
+.about-cta{display:flex; align-items:center; justify-content:space-between; gap:24px; margin-top:24px; padding:36px; border-radius:14px; border:1px solid rgba(242,184,75,.3); background:radial-gradient(600px 200px at 100% 0,rgba(242,184,75,.12),transparent 70%),var(--surface)}
+.about-cta p{margin:6px 0 0; color:var(--muted)}
 .about-cta .cta{flex:none}
 @media (max-width:960px){ .principles{grid-template-columns:1fr 1fr} }
-@media (max-width:760px){ .about-why{grid-template-columns:1fr; gap:16px} .principles,.facts{grid-template-columns:1fr} .about-cta{flex-direction:column; align-items:flex-start} }
+@media (max-width:760px){ .about-why,.about-lead{grid-template-columns:1fr; gap:16px} .principles{grid-template-columns:1fr} .about-cta{flex-direction:column; align-items:flex-start} .founder{flex-direction:column; gap:16px} }
 
+/* faq */
+.faq{background:var(--bg-2); border-top:1px solid var(--line)}
+.faq-grid{display:grid; grid-template-columns:1fr 1.6fr; gap:56px; align-items:start}
+.faq-list details{border-top:1px solid var(--line); padding:20px 0}
+.faq-list details:last-child{border-bottom:1px solid var(--line)}
+.faq-list summary{cursor:pointer; font-weight:600; font-size:17px; list-style:none; display:flex; justify-content:space-between; gap:16px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+"; color:var(--amber); font:400 22px/1 var(--mono); flex:none}
+.faq-list details[open] summary::after{content:"−"}
+.faq-list p{margin:12px 0 0; color:var(--muted); font-size:16px}
+@media (max-width:760px){ .faq-grid{grid-template-columns:1fr; gap:8px} }
 
 /* contact */
-.contact{background:linear-gradient(180deg,var(--ink),var(--ink-2)); color:var(--hero-text)}
-.contact .lead{color:var(--hero-muted)}
-.contact .eyebrow{display:inline-block; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--amber); margin-bottom:12px}
-.contact-head .lead{margin-bottom:16px}
-.mail-link{display:inline-block; color:var(--amber); font-weight:600; text-decoration:none; margin-bottom:48px; word-break:break-word}
+.contact{border-top:1px solid var(--line); background:radial-gradient(800px 400px at 0 0,rgba(110,160,225,.10),transparent 70%),var(--bg)}
+.contact .lead{margin-bottom:16px}
+.mail-link{display:inline-block; color:var(--amber); font:500 15px var(--mono); text-decoration:none; margin-bottom:48px; word-break:break-word}
 .mail-link:hover{text-decoration:underline}
 .contact-grid{display:grid; grid-template-columns:1.6fr 1fr; gap:24px; align-items:start}
-form{display:grid; gap:14px; background:rgba(255,255,255,.04); border:1px solid rgba(185,204,227,.18); border-radius:12px; padding:32px}
+form{display:grid; gap:16px; background:var(--surface); border:1px solid var(--line-2); border-radius:14px; padding:32px}
 .form-head h3{margin:0 0 6px; font-size:22px}
-.form-head p{margin:0 0 8px; color:var(--hero-muted); font-size:16px}
-label{font-size:14px; font-weight:500; color:var(--hero-muted); display:grid; gap:6px}
-input,select,textarea{font:inherit; font-size:16px; color:var(--text); background:#F5F7FA; border:1px solid transparent; border-radius:6px; padding:12px 14px; width:100%}
-textarea{min-height:120px; resize:vertical}
-.row{display:grid; grid-template-columns:1fr 1fr; gap:14px}
-button.send{justify-self:start; background:var(--amber); color:var(--ink); border:0; font:600 16px/1 inherit; font-family:inherit; padding:14px 22px; border-radius:6px; cursor:pointer}
-.note{font-size:14px; color:var(--hero-muted); min-height:1.4em; margin:0}
+.form-head p{margin:0 0 8px; color:var(--muted); font-size:16px}
+label{font-size:14px; font-weight:500; color:var(--muted); display:grid; gap:6px}
+input,select,textarea{font:inherit; font-size:16px; color:var(--text); background:var(--bg); border:1px solid var(--line-2); border-radius:8px; padding:12px 14px; width:100%; transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--amber); outline:none}
+input::placeholder,textarea::placeholder{color:var(--dim)}
+textarea{min-height:130px; resize:vertical}
+.row{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+button.send{justify-self:start; background:var(--amber); color:var(--ink); border:0; font:600 16px/1 "IBM Plex Sans",system-ui,sans-serif; padding:14px 24px; border-radius:8px; cursor:pointer}
+button.send:disabled{opacity:.6}
+.note{font-size:14px; color:var(--muted); min-height:1.4em; margin:0}
 .direct{display:grid; gap:16px}
-.direct > div{background:rgba(255,255,255,.04); border:1px solid rgba(185,204,227,.18); border-radius:12px; padding:24px}
-.direct h4{margin:0 0 6px; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--hero-muted)}
-.direct a{color:var(--hero-text); font-weight:600; font-size:15px; text-decoration:none; overflow-wrap:anywhere}
+.direct > div{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:24px}
+.direct h4{margin:0 0 8px; font:500 12px var(--mono); color:var(--dim)}
+.direct a{color:var(--text); font-weight:600; font-size:15px; text-decoration:none; overflow-wrap:anywhere}
 .direct a:hover{color:var(--amber)}
 .direct p{margin:0; font-weight:600}
-.direct p.muted{margin-top:6px; font-weight:400; font-size:15px; color:var(--hero-muted)}
-@media (max-width:760px){ .contact-grid,.row{grid-template-columns:1fr} }
+.direct p.muted{margin-top:6px; font-weight:400; font-size:15px; color:var(--muted)}
+.direct .next{border-color:rgba(242,184,75,.3)}
+.direct .next ol{margin:8px 0 0; padding-left:20px; display:grid; gap:8px; color:var(--text); font-size:15px}
+.direct .next li::marker{color:var(--amber); font-family:var(--mono)}
+.book-card[hidden]{display:none}
+.direct .book{display:inline-block; margin-top:12px; background:var(--amber); color:var(--ink); padding:10px 16px; border-radius:8px; font-size:15px}
+.direct .book:hover{color:var(--ink)}
+@media (max-width:760px){ .contact-grid,.row{grid-template-columns:1fr} form{padding:24px} }
 
+/* footer */
+footer{background:#040A14; color:var(--muted); font-size:15px; padding:64px 0 32px; border-top:1px solid var(--line)}
+.ft-grid{display:grid; grid-template-columns:1.4fr 1fr 1.2fr 1fr; gap:40px}
+.ft-brand .brand{font-size:16px}
+.ft-brand p{margin:16px 0 8px; max-width:280px; line-height:1.6}
+.ft-brand small{font:400 13px var(--mono); color:var(--dim)}
+footer h4{margin:0 0 16px; font:500 12px var(--mono); color:var(--dim)}
+footer ul{list-style:none; margin:0; padding:0; display:grid; gap:12px}
+footer ul a{color:var(--muted); text-decoration:none}
+footer ul a:hover{color:var(--amber)}
+.ft-bottom{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:48px; padding-top:24px; border-top:1px solid var(--line); font-size:13px; color:var(--dim)}
+.ft-li{color:var(--muted); display:flex}
+.ft-li:hover{color:var(--amber)}
+.ft-li svg{width:20px; height:20px}
+@media (max-width:860px){ .ft-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:520px){ .ft-grid{grid-template-columns:1fr} section{padding:80px 0} }
 </style>
 </head>
 <body>
@@ -201,9 +300,10 @@ button.send{justify-self:start; background:var(--amber); color:var(--ink); borde
   <div class="wrap bar">
     <a class="brand" href="#top" aria-label="CFN Software Consulting"><svg viewBox="0 0 141 61" aria-hidden="true"><g transform="translate(-7.5 -29.5)"><rect x="72" y="53.5" width="18" height="13" rx="6.5" fill="#F2B84B"/><g fill="none" stroke="currentColor" stroke-width="13" stroke-linejoin="miter"><path d="M54.97 43.03 A24 24 0 1 0 54.97 76.97"/><path d="M72 90.5 V36 H94"/><path d="M108 90.5 V53 A17 17 0 0 1 142 53 V90.5"/></g></g></svg><span>Software Consulting</span></a>
     <nav>
-      <a class="navlink" href="#servicos" data-i18n="nav.services">Serviços</a>
+      <a class="navlink" href="#servicos" data-i18n="nav.services">Soluções</a>
+      <a class="navlink" href="#modelos" data-i18n="nav.models">Contratação</a>
+      <a class="navlink" href="#cases" data-i18n="nav.cases">Cases</a>
       <a class="navlink" href="#sobre" data-i18n="nav.about">Sobre</a>
-      <a class="navlink" href="#industrias" data-i18n="nav.industries">Indústrias</a>
       <a class="navlink" href="#contato" data-i18n="nav.contact">Contato</a>
       <div class="lang" role="group" aria-label="Idioma / Language">
         <button type="button" data-lang="pt" aria-pressed="true">PT</button>
@@ -221,32 +321,116 @@ button.send{justify-self:start; background:var(--amber); color:var(--ink); borde
         <h1 data-i18n="hero.title">Sistemas .NET que aguentam escala, auditoria e prazo.</h1>
         <p data-i18n="hero.sub">Consultoria em backends de alta escala, APIs e aplicações fullstack para bancos, fintechs e varejo. Atendimento técnico direto, do diagnóstico à entrega.</p>
         <a class="cta" href="#contato" data-i18n="hero.cta">Falar sobre um projeto</a>
-        <a class="ghost" href="#cases" data-i18n="hero.cases">Ver resultados</a>
+        <a class="ghost" href="#servicos" data-i18n="hero.cases">Conhecer as soluções</a>
+        <p class="hero-note" data-i18n="hero.note">Resposta em até um dia útil · Primeira conversa sem custo</p>
       </div>
     </div>
   </div>
 
+  <section class="trust" aria-labelledby="trust-t">
+    <div class="wrap">
+      <p class="trust-label" id="trust-t" data-i18n="cl.title">Empresas em que nossa engenharia já atuou</p>
+      <ul class="client-list"><li><span>Banco CSF</span><small data-i18n="cl.d1">Braço financeiro do Carrefour</small></li><li><span>Grupo Azzas</span><small data-i18n="cl.d2">Grupo líder de moda e varejo</small></li><li><span>Natura</span><small data-i18n="cl.d3">Marca global de beleza e cosméticos</small></li><li><span>Grupo Moura</span><small data-i18n="cl.d4">Fabricante de baterias automotivas</small></li><li><span>Zoetis</span><small data-i18n="cl.d5">Líder global em saúde animal</small></li><li><span>TRF5</span><small data-i18n="cl.d6">Tribunal Regional Federal da 5ª Região</small></li><li><span>Detran-PE</span><small data-i18n="cl.d7">Departamento de Trânsito de Pernambuco</small></li></ul>
+      <p class="trust-note" data-i18n="cl.lead">Projetos entregues diretamente ou em parceria com consultorias.</p>
+    </div>
+  </section>
+
   <section id="servicos">
     <div class="wrap">
-      <h2 data-i18n="svc.title">O que a CFN Software faz</h2>
+      <h2 data-i18n="svc.title">Soluções</h2>
       <p class="lead" data-i18n="svc.lead">Projetos em que desempenho, confiabilidade e custo precisam fechar a conta ao mesmo tempo.</p>
       <div class="services">
-        <div class="svc"><h3 data-i18n="svc.1.t">Backends orientados a eventos</h3><p data-i18n="svc.1.d">Mensageria com Kafka e workers .NET para processar milhões de eventos com entrega garantida e alta disponibilidade.</p></div>
-        <div class="svc"><h3 data-i18n="svc.2.t">APIs e integrações</h3><p data-i18n="svc.2.d">APIs RESTful seguras com ASP.NET Core, integração entre sistemas, ERPs e parceiros, com Clean Architecture, DDD e CQRS.</p></div>
-        <div class="svc"><h3 data-i18n="svc.3.t">Modernização de legado</h3><p data-i18n="svc.3.d">Migração de .NET Framework, WPF e ASP Clássico para arquiteturas modernas e cloud-native, sem parar a operação.</p></div>
-        <div class="svc"><h3 data-i18n="svc.4.t">Aplicações fullstack</h3><p data-i18n="svc.4.d">Painéis e sistemas internos com Angular ou React sobre backend .NET, com autenticação corporativa e tempo real.</p></div>
-        <div class="svc"><h3 data-i18n="svc.5.t">Cloud e custo</h3><p data-i18n="svc.5.d">Infraestrutura em AWS e Azure com Terraform, CI/CD e observabilidade, além de revisão de custos (FinOps).</p></div>
-        <div class="svc"><h3 data-i18n="svc.6.t">IA aplicada ao desenvolvimento</h3><p data-i18n="svc.6.d">Agentes de revisão de código e quality gates automáticos, para usar IA com controle de qualidade.</p></div>
+        <div class="svc" id="svc-1"><h3 data-i18n="svc.1.t">Backends orientados a eventos</h3><p data-i18n="svc.1.d">Mensageria com Kafka e workers .NET para processar milhões de eventos com entrega garantida e alta disponibilidade.</p></div>
+        <div class="svc" id="svc-2"><h3 data-i18n="svc.2.t">APIs e integrações</h3><p data-i18n="svc.2.d">APIs RESTful seguras com ASP.NET Core, integração entre sistemas, ERPs e parceiros, com Clean Architecture, DDD e CQRS.</p></div>
+        <div class="svc" id="svc-3"><h3 data-i18n="svc.3.t">Modernização de legado</h3><p data-i18n="svc.3.d">Migração de .NET Framework, WPF e ASP Clássico para arquiteturas modernas e cloud-native, sem parar a operação.</p></div>
+        <div class="svc" id="svc-4"><h3 data-i18n="svc.4.t">Aplicações fullstack</h3><p data-i18n="svc.4.d">Painéis e sistemas internos com Angular ou React sobre backend .NET, com autenticação corporativa e tempo real.</p></div>
+        <div class="svc" id="svc-5"><h3 data-i18n="svc.5.t">Cloud e custo</h3><p data-i18n="svc.5.d">Infraestrutura em AWS e Azure com Terraform, CI/CD e observabilidade, além de revisão de custos (FinOps).</p></div>
+        <div class="svc" id="svc-6"><h3 data-i18n="svc.6.t">IA aplicada ao desenvolvimento</h3><p data-i18n="svc.6.d">Agentes de revisão de código e quality gates automáticos, para usar IA com controle de qualidade.</p></div>
       </div>
+      <p class="stack-line"><span data-i18n="stk.t">Stack principal</span> .NET · C# · ASP.NET Core · Kafka · Redis · SQL Server · PostgreSQL · AWS · Azure · Docker · Kubernetes · Terraform · Angular · React</p>
     </div>
   </section>
 
 
 
+  <section id="modelos" class="models">
+    <div class="wrap">
+      <h2 data-i18n="md.title">Modelos de contratação</h2>
+      <p class="lead" data-i18n="md.lead">Formatos pensados para o momento de cada empresa, sempre com contrato B2B e atendimento 100% remoto.</p>
+      <div class="model-grid"><article><h3 data-i18n="md.1.t">Projeto com escopo fechado</h3><p data-i18n="md.1.d">Para um sistema novo, uma integração ou uma modernização com objetivo claro. Escopo, prazo e valor definidos em proposta.</p></article><article><h3 data-i18n="md.2.t">Alocação dedicada</h3><p data-i18n="md.2.d">Engenharia .NET sênior integrada ao seu time, por mês, para acelerar entregas ou cobrir uma lacuna técnica.</p></article><article><h3 data-i18n="md.3.t">Diagnóstico técnico</h3><p data-i18n="md.3.d">Avaliação de arquitetura, código, custos de cloud ou incidentes, com relatório e plano de ação priorizado.</p></article></div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="process">
+    <div class="wrap">
+      <h2 data-i18n="st.title">Como funciona</h2>
+      <p class="lead" data-i18n="st.lead">Um processo simples, com escopo e valores claros antes de qualquer compromisso.</p>
+      <ol class="steps"><li><span class="n">1</span><h3 data-i18n="st.1.t">Conversa inicial</h3><p data-i18n="st.1.d">30 minutos, sem custo, para entender o contexto, o problema e se faz sentido trabalharmos juntos.</p></li><li><span class="n">2</span><h3 data-i18n="st.2.t">Diagnóstico</h3><p data-i18n="st.2.d">Análise do sistema, dos riscos e das prioridades, com acesso protegido por acordo de confidencialidade.</p></li><li><span class="n">3</span><h3 data-i18n="st.3.t">Proposta por escrito</h3><p data-i18n="st.3.d">Escopo, prazo e valor definidos: projeto fechado ou alocação mensal, conforme o momento do seu time.</p></li><li><span class="n">4</span><h3 data-i18n="st.4.t">Entrega com visibilidade</h3><p data-i18n="st.4.d">Entregas incrementais, demos frequentes, código e documentação no seu repositório e passagem de conhecimento ao time.</p></li></ol>
+    </div>
+  </section>
+
+  <section id="cases" class="cases">
+    <div class="wrap">
+      <h2 data-i18n="cases.title">Cases</h2>
+      <p class="lead" data-i18n="cases.lead">Exemplos do tipo de problema que a CFN resolve. Nomes de clientes omitidos por confidencialidade.</p>
+      <div class="case">
+        <div class="result">30M+ <small data-i18n="c1.k">eventos por mês</small></div>
+        <div>
+          <span class="sector" data-i18n="c1.s">Setor financeiro</span>
+          <h3 data-i18n="c1.t">Plataforma de notificações bancárias</h3>
+          <p class="cs"><strong data-i18n="lb.ch">Desafio</strong><span data-i18n="c1.ch">Alertas de antifraude, compras e senhas para milhões de clientes dependiam de um gateway de SMS terceirizado, caro e com pouco controle.</span></p><p class="cs"><strong data-i18n="lb.so">Solução</strong><span data-i18n="c1.so">Plataforma própria de notificações orientada a eventos, com Kafka e workers .NET, entrega garantida e alta disponibilidade.</span></p><p class="cs"><strong data-i18n="lb.re">Resultado</strong><span data-i18n="c1.re"><strong>R$ 400 mil de economia por ano</strong> e <strong>30% de aumento na satisfação dos clientes</strong>.</span></p>
+          <div class="tech">.NET Core · Kafka · Clean Architecture · CI/CD</div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="result">−20% <small data-i18n="c2.k">de custo em cloud</small></div>
+        <div>
+          <span class="sector" data-i18n="c2.s">Indústria farmacêutica</span>
+          <h3 data-i18n="c2.t">Revisão de custos na AWS</h3>
+          <p class="cs"><strong data-i18n="lb.ch">Desafio</strong><span data-i18n="c2.ch">Custo de AWS crescendo sem controle, com recursos superdimensionados e ociosos.</span></p><p class="cs"><strong data-i18n="lb.so">Solução</strong><span data-i18n="c2.so">Infraestrutura como código com Terraform e CI/CD, rightsizing de EC2, RDS e Lambda e limpeza de recursos ociosos.</span></p><p class="cs"><strong data-i18n="lb.re">Resultado</strong><span data-i18n="c2.re"><strong>20% a menos no custo de cloud</strong>, sem perda de desempenho.</span></p>
+          <div class="tech">AWS · Terraform · FinOps</div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="result">45 → 10 min <small data-i18n="c3.k">para diagnosticar incidentes</small></div>
+        <div>
+          <span class="sector" data-i18n="c3.s">Tecnologia B2B</span>
+          <h3 data-i18n="c3.t">Plataforma global para times distribuídos</h3>
+          <p class="cs"><strong data-i18n="lb.ch">Desafio</strong><span data-i18n="c3.ch">Plataforma usada por times globais, com incidentes frequentes em produção e diagnóstico lento.</span></p><p class="cs"><strong data-i18n="lb.so">Solução</strong><span data-i18n="c3.so">APIs .NET Core com CQRS, SPAs em Angular e React, testes automatizados e observabilidade com Grafana.</span></p><p class="cs"><strong data-i18n="lb.re">Resultado</strong><span data-i18n="c3.re"><strong>Diagnóstico de 45 para 10 minutos</strong>, <strong>cobertura de testes de 42% para 85%</strong> e metade dos incidentes em produção.</span></p>
+          <div class="tech">.NET Core · Angular · React · SignalR · Grafana</div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="result"><span data-i18n="c4.n">R$ 200 mil</span> <small data-i18n="c4.k">de economia por ano</small></div>
+        <div>
+          <span class="sector" data-i18n="c4.s">Indústria</span>
+          <h3 data-i18n="c4.t">RPA de análise de balanço para a controladoria</h3>
+          <p class="cs"><strong data-i18n="lb.ch">Desafio</strong><span data-i18n="c4.ch">A análise do balanço mensal era manual e obrigava os auditores a viajar todo mês.</span></p><p class="cs"><strong data-i18n="lb.so">Solução</strong><span data-i18n="c4.so">Robô em .NET no Azure que analisa o balanço da controladoria e aponta anomalias automaticamente.</span></p><p class="cs"><strong data-i18n="lb.re">Resultado</strong><span data-i18n="c4.re"><strong>R$ 200 mil de economia por ano</strong>: os auditores só se deslocam quando o volume de anomalias pede verificação presencial.</span></p>
+          <div class="tech" data-i18n="c4.x">.NET · Azure · RPA · Controladoria · Detecção de anomalias</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="industrias">
+    <div class="wrap">
+      <h2 data-i18n="ind.title">Setores atendidos</h2>
+      <p class="lead" data-i18n="ind.lead">Cada setor tem suas próprias restrições de negócio, regulação e operação. A arquitetura parte delas.</p>
+      <div class="industries">
+        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10h18M5 10v8m4-8v8m6-8v8m4-8v8M3 20h18M12 3l9 5H3l9-5z"/></svg></span><h3 data-i18n="ind.1.t">Financeiro</h3><p data-i18n="ind.1.d">Rastreabilidade para auditoria e exigências do Bacen, dados de clientes protegidos pela LGPD e picos de volume sem perder uma transação. Experiência em crédito, antifraude, garantias e notificações bancárias.</p><p class="ind-stack">.NET · Kafka · Redis · AWS</p></article>
+        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h2l2.2 10.2a1 1 0 0 0 1 .8h8.6a1 1 0 0 0 1-.8L20.5 8H7"/><circle cx="10" cy="19.5" r="1.2"/><circle cx="17" cy="19.5" r="1.2"/></svg></span><h3 data-i18n="ind.2.t">Varejo</h3><p data-i18n="ind.2.d">Black Friday e datas sazonais sem derrubar o checkout, estoque consistente entre loja e e-commerce e comunicação com o cliente em várias marcas e canais: WhatsApp, e-mail e SMS.</p><p class="ind-stack">.NET · Kafka · Redis · Angular</p></article>
+        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20V10l5 3V10l5 3V6l8 4v10H3zM7 17h2m4 0h2"/></svg></span><h3 data-i18n="ind.3.t">Indústria</h3><p data-i18n="ind.3.d">Fechamento contábil preso a planilhas, integrações frágeis com o ERP e controladoria manual. Automação que reduz retrabalho, deslocamentos e tempo de fechamento.</p><p class="ind-stack">.NET · Azure · RPA · SQL Server</p></article>
+        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span><h3 data-i18n="ind.4.t">Educação</h3><p data-i18n="ind.4.d">Picos de matrícula e início de semestre, dados de alunos sincronizados entre plataformas acadêmicas e tratamento de dados pessoais, inclusive de menores, conforme a LGPD.</p><p class="ind-stack">.NET · PostgreSQL · React · Azure</p></article>
+        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M8 12h2l1-2 2 4 1-2h2"/></svg></span><h3 data-i18n="ind.5.t">Saúde</h3><p data-i18n="ind.5.d">Dados sensíveis de pacientes sob a LGPD, disponibilidade em operações que não podem esperar e custo de infraestrutura sob controle, inclusive na indústria farmacêutica.</p><p class="ind-stack">.NET · AWS · Terraform · Docker</p></article>
+        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><h3 data-i18n="ind.6.t">Tecnologia e SaaS B2B</h3><p data-i18n="ind.6.d">Crescer a base de clientes sem crescer os incidentes: APIs que escalam, SLAs, observabilidade e cobertura de testes que permitem entregar rápido com segurança.</p><p class="ind-stack">.NET · Angular · React · SignalR</p></article>
+      </div>
+    </div>
+  </section>
+
+
   <section id="sobre" class="about">
     <div class="wrap">
       <div class="about-head">
-        <span class="eyebrow" data-i18n="ab.eyebrow">Sobre nós</span>
         <h2 data-i18n="ab.title">Engenharia .NET especializada, construída sobre experiência</h2>
         <p class="lead" data-i18n="ab.intro">A CFN Software Consulting é uma consultoria brasileira de engenharia de software, dedicada a sistemas .NET de missão crítica para empresas dos setores financeiro, varejo, indústria e educação.</p>
       </div>
@@ -269,10 +453,19 @@ button.send{justify-self:start; background:var(--amber); color:var(--ink); borde
           <article><i></i><h4 data-i18n="ab.p3.t">Padrão de produção</h4><p data-i18n="ab.p3.d">Testes automatizados, code review, CI/CD e observabilidade desde o primeiro dia, não como etapa final.</p></article>
           <article><i></i><h4 data-i18n="ab.p4.t">Parceria de longo prazo</h4><p data-i18n="ab.p4.d">Acompanhamos a evolução do sistema depois da entrega. O objetivo é continuidade, não uma transação pontual.</p></article>
         </div>
-        <ul class="facts">
-          <li><strong data-i18n="how.1.t">Contrato B2B, sob demanda ou por projeto</strong><span data-i18n="how.1.d">Alocação dedicada ou escopo fechado, conforme o momento do seu time.</span></li>
-          <li><strong data-i18n="how.3.t">Remoto, a partir de Recife</strong><span data-i18n="how.3.d">Fuso UTC-3, com boa sobreposição com Europa e Estados Unidos.</span></li>
-        </ul>
+      </div>
+
+      <div class="about-lead">
+        <h3 data-i18n="fd.t">Liderança técnica</h3>
+        <div class="founder">
+          <div class="avatar" aria-hidden="true">CFN</div>
+          <div>
+            <p class="f-name">Caique Ferreira Neves</p>
+            <p class="f-role" data-i18n="fd.role">Fundador e engenheiro principal</p>
+            <p data-i18n="fd.bio">Engenheiro de software com mais de 14 anos em sistemas .NET de missão crítica para bancos, varejo, indústria, saúde, educação e setor público. Atuou em modernização bancária, plataformas de mensageria com Kafka que processam milhões de eventos por mês e otimização de custos em cloud. Acompanha pessoalmente cada projeto da CFN, do diagnóstico à entrega.</p>
+            <a class="f-li" href="https://www.linkedin.com/in/caique-ferreira-neves" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span data-i18n="fd.li">Ver perfil no LinkedIn</span></a>
+          </div>
+        </div>
       </div>
 
       <div class="about-cta">
@@ -285,77 +478,16 @@ button.send{justify-self:start; background:var(--amber); color:var(--ink); borde
     </div>
   </section>
 
-  <section id="industrias">
-    <div class="wrap">
-      <h2 data-i18n="ind.title">Indústrias e resultados</h2>
-      <p class="lead" data-i18n="ind.lead">Cada setor tem suas próprias restrições de negócio, regulação e operação. A arquitetura parte delas.</p>
-      <div class="industries">
-        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10h18M5 10v8m4-8v8m6-8v8m4-8v8M3 20h18M12 3l9 5H3l9-5z"/></svg></span><h3 data-i18n="ind.1.t">Financeiro</h3><p data-i18n="ind.1.d">Bancos e fintechs: transações, crédito, antifraude e notificações com auditoria, rastreabilidade e SLAs elevados.</p><ul class="tags"><li><b style="background:#6B4FBB">.N</b>.NET</li><li><b style="background:#3A3F4B">K</b>Kafka</li><li><b style="background:#C8372D">R</b>Redis</li><li><b style="background:#E08A00">AW</b>AWS</li></ul></article>
-        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h2l2.2 10.2a1 1 0 0 0 1 .8h8.6a1 1 0 0 0 1-.8L20.5 8H7"/><circle cx="10" cy="19.5" r="1.2"/><circle cx="17" cy="19.5" r="1.2"/></svg></span><h3 data-i18n="ind.2.t">Varejo</h3><p data-i18n="ind.2.d">Pedidos multicanal, picos de demanda e integração entre lojas, e-commerce, ERP e canais de comunicação.</p><ul class="tags"><li><b style="background:#6B4FBB">.N</b>.NET</li><li><b style="background:#3A3F4B">K</b>Kafka</li><li><b style="background:#C8372D">R</b>Redis</li><li><b style="background:#C3002F">A</b>Angular</li></ul></article>
-        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20V10l5 3V10l5 3V6l8 4v10H3zM7 17h2m4 0h2"/></svg></span><h3 data-i18n="ind.3.t">Indústria</h3><p data-i18n="ind.3.d">Automação de processos, controladoria e modernização de sistemas operacionais com redução de custo.</p><ul class="tags"><li><b style="background:#6B4FBB">.N</b>.NET</li><li><b style="background:#0A78D4">Az</b>Azure</li><li><b style="background:#2E8B6E">RP</b>RPA</li><li><b style="background:#A93B3B">SQ</b>SQL Server</li></ul></article>
-        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span><h3 data-i18n="ind.4.t">Educação</h3><p data-i18n="ind.4.d">Integração de dados acadêmicos entre plataformas, com consistência, rotinas automatizadas e escala.</p><ul class="tags"><li><b style="background:#6B4FBB">.N</b>.NET</li><li><b style="background:#336791">PG</b>PostgreSQL</li><li><b style="background:#1E9FC2">Re</b>React</li><li><b style="background:#0A78D4">Az</b>Azure</li></ul></article>
-        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M8 12h2l1-2 2 4 1-2h2"/></svg></span><h3 data-i18n="ind.5.t">Saúde</h3><p data-i18n="ind.5.d">Sistemas para operações de saúde e indústria farmacêutica, com segurança de dados, disponibilidade e custo sob controle.</p><ul class="tags"><li><b style="background:#6B4FBB">.N</b>.NET</li><li><b style="background:#E08A00">AW</b>AWS</li><li><b style="background:#6F4BD8">TF</b>Terraform</li><li><b style="background:#1D8FE1">D</b>Docker</li></ul></article>
-        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><h3 data-i18n="ind.6.t">Tecnologia e SaaS B2B</h3><p data-i18n="ind.6.d">Plataformas usadas por times globais, com APIs escaláveis, tempo real e alta cobertura de testes.</p><ul class="tags"><li><b style="background:#6B4FBB">.N</b>.NET</li><li><b style="background:#C3002F">A</b>Angular</li><li><b style="background:#1E9FC2">Re</b>React</li><li><b style="background:#5B6BD0">SR</b>SignalR</li></ul></article>
-      </div>
-      <div class="techs">
-        <h3 class="sub-title" data-i18n="tg.title">Tecnologias</h3>
-        <p class="lead" data-i18n="tg.lead">O ecossistema com que trabalhamos, organizado por área.</p>
-        <div class="tech-groups">
-        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></span><h4 data-i18n="tg.1">Backend e APIs</h4><ul class="tags"><li><b style="background:#6B4FBB">.N</b>.NET</li><li><b style="background:#7B5BD6">C#</b>C#</li><li><b style="background:#5C4AA8">AS</b>ASP.NET Core</li><li><b style="background:#5B6BD0">SR</b>SignalR</li></ul></article>
-        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span><h4 data-i18n="tg.2">Mensageria e dados</h4><ul class="tags"><li><b style="background:#3A3F4B">K</b>Kafka</li><li><b style="background:#C8372D">R</b>Redis</li><li><b style="background:#A93B3B">SQ</b>SQL Server</li><li><b style="background:#336791">PG</b>PostgreSQL</li></ul></article>
-        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 18 8.5a4.8 4.8 0 0 1-.5 9.5H7z"/></svg></span><h4 data-i18n="tg.3">Cloud e DevOps</h4><ul class="tags"><li><b style="background:#E08A00">AW</b>AWS</li><li><b style="background:#0A78D4">Az</b>Azure</li><li><b style="background:#1D8FE1">D</b>Docker</li><li><b style="background:#326CE5">K8</b>Kubernetes</li><li><b style="background:#6F4BD8">TF</b>Terraform</li><li><b style="background:#24292F">CI</b>CI/CD</li></ul></article>
-        <article><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 20V9"/></svg></span><h4 data-i18n="tg.4">Frontend e qualidade</h4><ul class="tags"><li><b style="background:#C3002F">A</b>Angular</li><li><b style="background:#1E9FC2">Re</b>React</li><li><b style="background:#4A5D73">xU</b>xUnit</li><li><b style="background:#E86A1C">G</b>Grafana</li></ul></article>
-        </div>
-      </div>
-      <div class="results" id="cases">
-      <h3 class="sub-title" data-i18n="cases.title">Resultados entregues</h3>
-      <p class="lead" data-i18n="cases.lead">Alguns projetos recentes. Nomes de clientes omitidos quando há acordo de confidencialidade.</p>
-
-      <div class="case">
-        <div class="result">30M+ <small data-i18n="c1.k">eventos por mês</small></div>
-        <div>
-          <span class="sector" data-i18n="c1.s">Setor financeiro</span>
-          <h3 data-i18n="c1.t">Plataforma de notificações bancárias</h3>
-          <p data-i18n="c1.d">Substituição de um gateway de SMS terceirizado por uma plataforma própria de alertas (antifraude, compras, senhas) para milhões de clientes. Economia de R$ 400 mil por ano e aumento de 30% na satisfação.</p>
-          <div class="tech">.NET Core · Kafka · Clean Architecture · CI/CD</div>
-        </div>
-      </div>
-      <div class="case">
-        <div class="result">−20% <small data-i18n="c2.k">de custo em cloud</small></div>
-        <div>
-          <span class="sector" data-i18n="c2.s">Indústria farmacêutica</span>
-          <h3 data-i18n="c2.t">Revisão de custos na AWS</h3>
-          <p data-i18n="c2.d">Reestruturação do ambiente com Terraform e CI/CD, rightsizing de EC2, RDS e Lambda e limpeza de recursos ociosos, sem perda de desempenho.</p>
-          <div class="tech">AWS · Terraform · FinOps</div>
-        </div>
-      </div>
-      <div class="case">
-        <div class="result">45 → 10 min <small data-i18n="c3.k">para diagnosticar incidentes</small></div>
-        <div>
-          <span class="sector" data-i18n="c3.s">Tecnologia B2B</span>
-          <h3 data-i18n="c3.t">Plataforma global para times distribuídos</h3>
-          <p data-i18n="c3.d">APIs .NET Core com CQRS e SPAs em Angular e React para times globais. Cobertura de testes de 42% para 85% e metade dos incidentes em produção.</p>
-          <div class="tech">.NET Core · Angular · React · SignalR · Grafana</div>
-        </div>
-      </div>
-      <div class="case">
-        <div class="result"><span data-i18n="c4.n">R$ 200 mil</span> <small data-i18n="c4.k">de economia por ano</small></div>
-        <div>
-          <span class="sector" data-i18n="c4.s">Indústria</span>
-          <h3 data-i18n="c4.t">RPA de análise de balanço para a controladoria</h3>
-          <p data-i18n="c4.d">Robô que analisa o balanço mensal da controladoria e aponta anomalias automaticamente. A auditoria deixou de exigir viagens todo mês: os auditores só se deslocam quando o volume de anomalias pede verificação presencial.</p>
-          <div class="tech" data-i18n="c4.x">.NET · Azure · RPA · Controladoria · Detecção de anomalias</div>
-        </div>
-      </div>
-    </div>
+  <section id="faq" class="faq">
+    <div class="wrap faq-grid">
+      <div><h2 data-i18n="fq.title">Perguntas frequentes</h2><p class="lead" data-i18n="fq.lead">O que costumam perguntar antes da primeira conversa.</p></div>
+      <div class="faq-list"><details><summary data-i18n="fq.1.q">Como funciona a contratação?</summary><p data-i18n="fq.1.a">Por contrato B2B com a CFN Software Consulting, empresa com CNPJ ativo. O formato pode ser projeto com escopo fechado ou alocação mensal dedicada.</p></details><details><summary data-i18n="fq.2.q">Vocês assinam acordo de confidencialidade (NDA)?</summary><p data-i18n="fq.2.a">Sim. O NDA é assinado antes de qualquer acesso a código, dados ou documentação interna.</p></details><details><summary data-i18n="fq.3.q">De quem é o código?</summary><p data-i18n="fq.3.a">Seu. Todo o código e a documentação produzidos ficam no seu repositório e são de propriedade do cliente.</p></details><details><summary data-i18n="fq.4.q">Quem vai trabalhar no meu projeto?</summary><p data-i18n="fq.4.a">O fundador lidera tecnicamente cada projeto. Você fala diretamente com quem desenha a arquitetura e escreve o código.</p></details><details><summary data-i18n="fq.5.q">Vocês trabalham junto com o meu time?</summary><p data-i18n="fq.5.a">Sim. Podemos atuar integrados ao seu time, com code review e passagem de conhecimento, ou assumir um escopo de ponta a ponta.</p></details><details><summary data-i18n="fq.6.q">Atendem empresas fora do Brasil?</summary><p data-i18n="fq.6.a">Sim. O atendimento é 100% remoto, em português ou inglês, no fuso UTC-3, próximo do horário da Costa Leste dos EUA.</p></details></div>
     </div>
   </section>
-
 
   <section class="contact" id="contato">
     <div class="wrap">
       <div class="contact-head">
-        <span class="eyebrow" data-i18n="ct.eyebrow">Contato</span>
         <h2 data-i18n="ct.title">Entre em contato</h2>
         <p class="lead" data-i18n="ct.lead">Precisa de engenharia .NET para um sistema crítico? Conte o que você precisa e retornamos em até um dia útil.</p>
         <a class="mail-link" href="mailto:caiquenevesdesenvolvimento@gmail.com">caiquenevesdesenvolvimento@gmail.com</a>
@@ -368,7 +500,7 @@ button.send{justify-self:start; background:var(--amber); color:var(--ink); borde
           </div>
           <div class="row">
             <label><span><span data-i18n="f.name">Nome</span> *</span><input name="name" required autocomplete="name"></label>
-            <label><span><span data-i18n="f.email">E-mail</span> *</span><input name="email" type="email" required autocomplete="email"></label>
+            <label><span><span data-i18n="f.email">E-mail profissional</span> *</span><input name="email" type="email" required autocomplete="email"></label>
           </div>
           <label><span data-i18n="f.company">Empresa</span><input name="company" autocomplete="organization"></label>
           <label><span data-i18n="f.type">Tipo de projeto</span>
@@ -382,14 +514,15 @@ button.send{justify-self:start; background:var(--amber); color:var(--ink); borde
               <option data-i18n="o.7">Ainda não sei</option>
             </select>
           </label>
-          <label><span><span data-i18n="f.msg">Mensagem</span> *</span><textarea name="msg" required></textarea></label>
+          <label><span><span data-i18n="f.msg">Desafio técnico</span> *</span><textarea name="msg" required data-i18n-ph="f.msg.ph" placeholder="Ex.: qual sistema, volume, prazo e o que está travando hoje."></textarea></label>
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
           <button class="send" type="submit" data-i18n="f.send">Enviar mensagem</button>
           <p class="note" id="note" role="status"></p>
         </form>
         <aside class="direct">
+          <div class="next"><h4 data-i18n="nx.h">Próximos passos</h4><ol><li data-i18n="nx.1">Respondemos em até um dia útil</li><li data-i18n="nx.2">Conversa de 30 minutos, sem custo</li><li data-i18n="nx.3">Proposta por escrito com escopo, prazo e valor</li></ol></div>
+          <div class="book-card" hidden><h4 data-i18n="bk.h">Conversa rápida</h4><p data-i18n="bk.t">30 minutos para entender seu desafio.</p><a class="book" href="#" target="_blank" rel="noopener" data-i18n="bk.b">Agendar conversa</a></div>
           <div><h4 data-i18n="ct.mail">E-mail</h4><a href="mailto:caiquenevesdesenvolvimento@gmail.com">caiquenevesdesenvolvimento@gmail.com</a></div>
-          <div><h4 data-i18n="ct.loc">Localização</h4><p data-i18n="ct.loc.v">Recife, PE · Brasil</p><p class="muted" data-i18n="ct.loc.d">Atendimento remoto para todo o Brasil, Europa e Estados Unidos.</p></div>
         </aside>
       </div>
     </div>
@@ -402,18 +535,22 @@ button.send{justify-self:start; background:var(--amber); color:var(--ink); borde
       <div class="ft-brand">
         <a class="brand" href="#top" aria-label="CFN Software Consulting"><svg viewBox="0 0 141 61" aria-hidden="true"><g transform="translate(-7.5 -29.5)"><rect x="72" y="53.5" width="18" height="13" rx="6.5" fill="#F2B84B"/><g fill="none" stroke="currentColor" stroke-width="13" stroke-linejoin="miter"><path d="M54.97 43.03 A24 24 0 1 0 54.97 76.97"/><path d="M72 90.5 V36 H94"/><path d="M108 90.5 V53 A17 17 0 0 1 142 53 V90.5"/></g></g></svg><span>Software Consulting</span></a>
         <p data-i18n="ft.tag">Engenharia de software .NET para sistemas de missão crítica.</p>
-        <small data-i18n="ft.loc">Recife, PE · Brasil</small>
+        <small data-i18n="ft.loc">Brasil</small>
       </div>
       <div><h4 data-i18n="ft.co">Empresa</h4><ul>
-        <li><a href="#servicos" data-i18n="nav.services">Serviços</a></li>
-        <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
-        <li><a href="#industrias" data-i18n="nav.industries">Indústrias</a></li>
-        <li><a href="#contato" data-i18n="nav.contact">Contato</a></li></ul></div>
-      <div><h4 data-i18n="ft.svc">Serviços</h4><ul>
-        <li><a href="#servicos" data-i18n="ft.s1">Backends orientados a eventos</a></li>
-        <li><a href="#servicos" data-i18n="ft.s2">APIs e integrações</a></li>
-        <li><a href="#servicos" data-i18n="ft.s3">Modernização de legado</a></li>
-        <li><a href="#servicos" data-i18n="ft.s4">Cloud e custo</a></li></ul></div>
+        <li><a href="#servicos" data-i18n="ft.l1">Soluções</a></li>
+        <li><a href="#modelos" data-i18n="ft.l2">Modelos de contratação</a></li>
+        <li><a href="#cases" data-i18n="ft.l3">Cases</a></li>
+        <li><a href="#industrias" data-i18n="ft.l4">Setores atendidos</a></li>
+        <li><a href="#sobre" data-i18n="ft.l5">Sobre</a></li>
+        <li><a href="#faq" data-i18n="ft.l6">Perguntas frequentes</a></li></ul></div>
+      <div><h4 data-i18n="ft.svc">Soluções</h4><ul>
+        <li><a href="#svc-1" data-i18n="svc.1.t">Backends orientados a eventos</a></li>
+        <li><a href="#svc-2" data-i18n="svc.2.t">APIs e integrações</a></li>
+        <li><a href="#svc-3" data-i18n="svc.3.t">Modernização de legado</a></li>
+        <li><a href="#svc-4" data-i18n="svc.4.t">Aplicações fullstack</a></li>
+        <li><a href="#svc-5" data-i18n="svc.5.t">Cloud e custo</a></li>
+        <li><a href="#svc-6" data-i18n="svc.6.t">IA aplicada ao desenvolvimento</a></li></ul></div>
       <div><h4 data-i18n="ft.cn">Conectar</h4><ul>
         <li><a href="https://www.linkedin.com/company/cnsoftwareconsulting" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="mailto:caiquenevesdesenvolvimento@gmail.com" data-i18n="ft.mail">Envie-nos um e-mail</a></li>
@@ -428,38 +565,35 @@ button.send{justify-self:start; background:var(--amber); color:var(--ink); borde
 
 <script>
 const EN = {
-  "nav.services":"Services","nav.cases":"Results","nav.industries":"Industries","nav.about":"About","nav.contact":"Contact",
+  "nav.services":"Solutions","nav.models":"Engagement","nav.cases":"Case studies","nav.industries":"Industries","nav.about":"About","nav.contact":"Contact",
+  "hero.kicker":"Nearshore .NET engineering · UTC-3",
   "hero.title":".NET systems built to handle scale, audits and deadlines.",
-  "hero.sub":"Consulting on high-scale backends, APIs and full-stack applications for banks, fintechs and retail. Direct technical engagement, from assessment to delivery.",
-  "hero.cta":"Discuss a project","hero.cases":"See results",
-  "svc.title":"What CFN Software does","svc.lead":"Projects where performance, reliability and cost all have to work at the same time.",
+  "hero.sub":"Senior .NET engineering from Brazil for US and European teams: high-scale backends, APIs and full-stack applications, with overlapping business hours and direct technical engagement from assessment to delivery.",
+  "hero.cta":"Discuss a project","hero.cases":"Explore our solutions",
+  "svc.title":"Solutions","svc.lead":"Projects where performance, reliability and cost all have to work at the same time.",
   "svc.1.t":"Event-driven backends","svc.1.d":"Kafka messaging and .NET workers processing millions of events with guaranteed delivery and high availability.",
   "svc.2.t":"APIs and integrations","svc.2.d":"Secure RESTful APIs with ASP.NET Core, integrations with systems, ERPs and partners, built on Clean Architecture, DDD and CQRS.",
   "svc.3.t":"Legacy modernization","svc.3.d":"Moving .NET Framework, WPF and Classic ASP to modern, cloud-native architectures without stopping operations.",
   "svc.4.t":"Full-stack applications","svc.4.d":"Dashboards and internal systems in Angular or React on a .NET backend, with enterprise authentication and real-time updates.",
   "svc.5.t":"Cloud and cost","svc.5.d":"AWS and Azure infrastructure with Terraform, CI/CD and observability, plus cost reviews (FinOps).",
   "svc.6.t":"AI applied to development","svc.6.d":"Code review agents and automated quality gates, so your team uses AI with quality control.",
-  "cases.title":"Delivered results","cases.lead":"Some recent projects. Client names are omitted where confidentiality applies.",
+  "cases.title":"Case studies","cases.lead":"Examples of the problems CFN solves. Client names are omitted for confidentiality.",
   "c1.s":"Finance","c2.s":"Pharmaceutical","c3.s":"B2B technology","c4.s":"Manufacturing",
   "c1.k":"events per month","c1.t":"Banking notification platform",
-  "c1.d":"Replaced a third-party SMS gateway with an in-house alert platform (fraud, purchases, passwords) for millions of customers. BRL 400K saved per year and a 30% increase in customer satisfaction.",
   "c2.k":"cloud spend","c2.t":"AWS cost review",
-  "c2.d":"Rebuilt the environment with Terraform and CI/CD, rightsized EC2, RDS and Lambda and removed idle resources, with no loss of performance.",
   "c3.k":"to diagnose incidents","c3.t":"Global platform for distributed teams",
-  "c4.n":"BRL 200K","c4.k":"in annual savings","c4.t":"Balance sheet analysis RPA for controllership",
-  "c4.d":"A bot that analyzes the controllership's monthly balance sheet and flags anomalies automatically. Audits no longer require monthly travel: auditors only go on site when the volume of anomalies calls for in-person review.",
+  "c4.n":"~USD 37K","c4.k":"in annual savings","c4.t":"Balance sheet analysis RPA for controllership",
   "c4.x":".NET · Azure · RPA · Controllership · Anomaly detection",
-  "c3.d":".NET Core APIs with CQRS and Angular and React SPAs for global teams. Test coverage raised from 42% to 85% and production incidents cut in half.",
-  "ft.tag":".NET software engineering for mission-critical systems.","ft.loc":"Recife, Brazil","ft.co":"Company","ft.svc":"Services","ft.cn":"Connect",
+  "ft.tag":".NET software engineering for mission-critical systems.","ft.loc":"Brazil","ft.co":"Company","ft.svc":"Solutions","ft.cn":"Connect",
   "ft.s1":"Event-driven backends","ft.s2":"APIs and integrations","ft.s3":"Legacy modernization","ft.s4":"Cloud and cost","ft.mail":"Email us","ft.proj":"Discuss a project",
-  "ind.title":"Industries and results","ind.lead":"Every industry has its own business, regulatory and operational constraints. The architecture starts from them.",
-  "ind.5.t":"Healthcare","ind.5.d":"Systems for healthcare operations and the pharmaceutical industry, with data security, availability and controlled costs.",
-  "ind.6.t":"Technology and B2B SaaS","ind.6.d":"Platforms used by global teams, with scalable APIs, real-time features and high test coverage.",
-  "tg.title":"Technologies","tg.lead":"The ecosystem we work with, organized by area.","tg.1":"Backend and APIs","tg.2":"Messaging and data","tg.3":"Cloud and DevOps","tg.4":"Frontend and quality",
-  "ind.1.t":"Finance","ind.1.d":"Banks and fintechs: transactions, credit, fraud prevention and notifications with auditability, traceability and high SLAs.",
-  "ind.2.t":"Retail","ind.2.d":"Multichannel orders, demand peaks and integration across stores, e-commerce, ERP and communication channels.",
-  "ind.3.t":"Manufacturing","ind.3.d":"Process automation, controllership and modernization of operational systems with cost reduction.",
-  "ind.4.t":"Education","ind.4.d":"Academic data integration across platforms, with consistency, automated routines and scale.",
+  "ind.title":"Industries we serve","ind.lead":"Every industry has its own business, regulatory and operational constraints. The architecture starts from them.",
+  "ind.5.t":"Healthcare","ind.5.d":"Sensitive patient data under data privacy law, availability for operations that can't wait, and infrastructure costs under control, including in the pharmaceutical industry.",
+  "ind.6.t":"Technology and B2B SaaS","ind.6.d":"Grow the customer base without growing incidents: APIs that scale, SLAs, observability and test coverage that let you ship fast and safely.",
+  "cl.title":"Companies our engineering has worked with","cl.lead":"Projects delivered directly or in partnership with consultancies.","stk.t":"Core stack",
+  "ind.1.t":"Finance","ind.1.d":"Audit trails that satisfy central bank requirements, customer data protected under data privacy law (LGPD), and volume peaks without dropping a transaction. Experience in credit, fraud prevention, collateral and banking notifications.",
+  "ind.2.t":"Retail","ind.2.d":"Black Friday and seasonal peaks without taking checkout down, consistent inventory across stores and e-commerce, and customer messaging across multiple brands and channels: WhatsApp, email and SMS.",
+  "ind.3.t":"Manufacturing","ind.3.d":"Financial closing stuck in spreadsheets, fragile ERP integrations and manual controllership. Automation that cuts rework, travel and closing time.",
+  "ind.4.t":"Education","ind.4.d":"Enrollment and semester-start peaks, student data kept in sync across academic platforms, and personal data, including minors', handled under data privacy law.",
   "ab.eyebrow":"About us","ab.title":"Specialized .NET engineering, built on experience",
   "ab.intro":"CFN Software Consulting is a Brazilian software engineering consultancy dedicated to mission-critical .NET systems for companies in finance, retail, manufacturing and education.",
   "ab.why.t":"Why we exist",
@@ -471,13 +605,49 @@ const EN = {
   "ab.p2.t":"Transparency","ab.p2.d":"Scope, timelines and pricing defined in writing. Visibility into every step, with no surprises along the way.",
   "ab.p3.t":"Production standards","ab.p3.d":"Automated tests, code review, CI/CD and observability from day one, not as a final step.",
   "ab.p4.t":"Long-term partnership","ab.p4.d":"We stay involved as the system evolves after delivery. The goal is continuity, not a one-off transaction.",
+  "fd.t":"Technical leadership","fd.role":"Founder & Principal Engineer",
+  "fd.bio":"Software engineer with 14+ years building mission-critical .NET systems for banking, retail, manufacturing, healthcare, education and the public sector. Led banking modernization, Kafka messaging platforms processing millions of events per month, and cloud cost optimization. Personally oversees every CFN project, from assessment to delivery.",
+  "fd.li":"View LinkedIn profile","bk.h":"Quick call","bk.t":"30 minutes to understand your challenge.","bk.b":"Book a 30-min call",
+  "nav.how":"How it works",
+  "ft.l1":"Solutions","ft.l2":"Engagement models","ft.l3":"Case studies","ft.l4":"Industries","ft.l5":"About","ft.l6":"FAQ",
+  "cl.d1":"Carrefour\'s banking arm in Brazil","cl.d2":"Leading Brazilian fashion retail group","cl.d3":"Global beauty and cosmetics brand","cl.d4":"Automotive battery manufacturer","cl.d5":"Global animal health company","cl.d6":"Federal Regional Court, 5th Region","cl.d7":"Pernambuco State DMV",
+  "md.title":"Engagement models","md.lead":"Formats designed around where each company is, always under a B2B contract and fully remote.",
+  "md.1.t":"Fixed-scope project","md.1.d":"For a new system, an integration or a modernization with a clear goal. Scope, timeline and price defined in a proposal.",
+  "md.2.t":"Dedicated allocation","md.2.d":"Senior .NET engineering embedded in your team on a monthly basis, to speed up delivery or fill a technical gap.",
+  "md.3.t":"Technical assessment","md.3.d":"A review of architecture, code, cloud costs or incidents, with a report and a prioritized action plan.","hero.note":"Reply within one business day · Free intro call",
+  "lb.ch":"Challenge","lb.so":"Solution","lb.re":"Result",
+  "c1.ch":"Fraud, purchase and password alerts for millions of customers relied on a costly third-party SMS gateway with little control.",
+  "c1.so":"An in-house, event-driven notification platform built on Kafka and .NET workers, with guaranteed delivery and high availability.",
+  "c1.re":"<strong>~USD 75K saved per year</strong> and <strong>a 30% increase in customer satisfaction</strong>.",
+  "c2.ch":"AWS spend growing out of control, with oversized and idle resources.",
+  "c2.so":"Infrastructure as code with Terraform and CI/CD, rightsizing of EC2, RDS and Lambda, and removal of idle resources.",
+  "c2.re":"<strong>20% lower cloud spend</strong> with no loss of performance.",
+  "c3.ch":"A platform used by global teams, with frequent production incidents and slow diagnosis.",
+  "c3.so":".NET Core APIs with CQRS, Angular and React SPAs, automated testing and observability with Grafana.",
+  "c3.re":"<strong>Diagnosis time cut from 45 to 10 minutes</strong>, <strong>test coverage raised from 42% to 85%</strong> and production incidents cut in half.",
+  "c4.ch":"The monthly balance sheet review was manual and required auditors to travel every month.",
+  "c4.so":"A .NET bot on Azure that analyzes the controllership's balance sheet and flags anomalies automatically.",
+  "c4.re":"<strong>~USD 37K saved per year</strong>: auditors only travel when the volume of anomalies calls for an on-site review.",
+  "st.title":"How it works","st.lead":"A simple process, with clear scope and pricing before any commitment.",
+  "st.1.t":"Intro call","st.1.d":"30 minutes, free of charge, to understand your context, the problem and whether we're a good fit.",
+  "st.2.t":"Assessment","st.2.d":"A review of your system, risks and priorities, with access covered by a non-disclosure agreement.",
+  "st.3.t":"Written proposal","st.3.d":"Defined scope, timeline and price: a fixed-scope project or monthly allocation, depending on where your team is.",
+  "st.4.t":"Visible delivery","st.4.d":"Incremental releases, frequent demos, code and documentation in your repository, and knowledge transfer to your team.",
+  "fq.title":"Frequently asked questions","fq.lead":"What clients usually ask before the first call.",
+  "fq.1.q":"How do engagements work contractually?","fq.1.a":"Through a B2B contract with CFN Software Consulting, a registered Brazilian company. Engagements can be fixed-scope projects or dedicated monthly allocation.",
+  "fq.2.q":"Do you sign NDAs?","fq.2.a":"Yes. The NDA is signed before any access to code, data or internal documentation.",
+  "fq.3.q":"Who owns the code?","fq.3.a":"You do. All code and documentation we produce live in your repository and belong to you.",
+  "fq.4.q":"Who will work on my project?","fq.4.a":"The founder technically leads every project. You talk directly to the person designing the architecture and writing the code.",
+  "fq.5.q":"Can you work alongside my team?","fq.5.a":"Yes. We can embed with your team, with code review and knowledge transfer, or own a scope end to end.",
+  "fq.6.q":"Do you work with companies outside Brazil?","fq.6.a":"Yes. Engagements are fully remote, in English or Portuguese, on UTC-3, close to US Eastern time.",
+  "nx.h":"Next steps","nx.1":"We reply within one business day","nx.2":"A 30-minute intro call, free of charge","nx.3":"A written proposal with scope, timeline and price",
   "ab.cta.t":"Let's work together","ab.cta.d":"Whether it's a new system, a modernization or extra capacity for your team, we'd like to understand your challenge.","ab.cta.b":"Contact us",
   "how.1.t":"B2B contract, on demand or per project","how.1.d":"Dedicated allocation or fixed scope, depending on where your team is.",
-    "how.3.t":"Remote, from Recife, Brazil","how.3.d":"UTC-3, with solid overlap with Europe and the United States.",
+    "how.3.t":"Fully remote engagement","how.3.d":"UTC-3: one to two hours ahead of US Eastern time, with a full shared business day for East Coast teams and afternoon overlap with Europe.",
   "ct.eyebrow":"Contact","ct.title":"Get in touch","ct.lead":"Need .NET engineering for a mission-critical system? Tell us what you need and we'll get back to you within one business day.",
   "ct.form.t":"Tell us what you need","ct.form.s":"Describe the project or your team's needs and we'll follow up to discuss next steps.",
-  "ct.mail":"Email","ct.loc":"Location","ct.loc.v":"Recife, Brazil","ct.loc.d":"Remote engagements across Brazil, Europe and the United States.",
-  "f.name":"Name","f.email":"Email","f.company":"Company","f.type":"Project type","f.msg":"Message","f.send":"Send message",
+  "ct.mail":"Email","ct.loc":"Engagement","ct.loc.v":"Fully remote","ct.loc.d":"Remote engagements across Brazil, Europe and the United States.",
+  "f.name":"Name","f.email":"Work email","f.company":"Company","f.type":"Project type","f.msg":"Technical challenge","f.msg.ph":"E.g. which system, volume, deadline and what's blocking you today.","f.send":"Send message",
   "o.1":"Backend / Kafka messaging","o.2":"APIs and integrations","o.3":"Legacy system modernization","o.4":"Full-stack application (Angular / React)",
   "o.5":"Cloud, cost and observability","o.6":"Dedicated .NET engineering allocation","o.7":"Not sure yet",
   "ft":"© 2026 CFN Software Consulting. All rights reserved.",
@@ -485,12 +655,14 @@ const EN = {
   "subject":"New project","sending":"Sending…","sent":"Message sent! We will get back to you within one business day."
 };
 const PT = {};
-document.querySelectorAll("[data-i18n]").forEach(el => PT[el.dataset.i18n] = el.textContent);
+document.querySelectorAll("[data-i18n]").forEach(el => PT[el.dataset.i18n] = el.innerHTML);
+document.querySelectorAll("[data-i18n-ph]").forEach(el => PT[el.dataset.i18nPh] = el.placeholder);
 Object.assign(PT,{"err":"Preencha nome, um e-mail válido e a mensagem.","ok":"Seu app de e-mail vai abrir com a mensagem pronta. Se não abrir, escreva para caiquenevesdesenvolvimento@gmail.com.","subject":"Novo projeto","sending":"Enviando…","sent":"Mensagem enviada! Retornamos em até um dia útil."});
 let lang = "pt";
 function setLang(l){
   lang = l; const d = l === "en" ? EN : PT;
-  document.querySelectorAll("[data-i18n]").forEach(el => { const v = d[el.dataset.i18n]; if (v) el.textContent = v; });
+  document.querySelectorAll("[data-i18n]").forEach(el => { const v = d[el.dataset.i18n]; if (v) el.innerHTML = v; });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { const v = d[el.dataset.i18nPh]; if (v) el.placeholder = v; });
   document.documentElement.lang = l === "en" ? "en" : "pt-BR";
   document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
   document.getElementById("note").textContent = "";
@@ -498,8 +670,13 @@ function setLang(l){
 }
 document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
 let saved = null; try { saved = localStorage.getItem("cfn-lang"); } catch(e) {}
+const qLang = new URLSearchParams(location.search).get("lang");
+if (qLang === "en" || qLang === "pt") saved = qLang;
 setLang(saved || ((navigator.language || "pt").toLowerCase().startsWith("pt") ? "pt" : "en"));
 
+// Cole aqui o link do Calendly/Cal.com para exibir o botão "Agendar conversa"
+const BOOKING_URL = "";
+if (BOOKING_URL) { const c = document.querySelector(".book-card"); c.hidden = false; c.querySelector("a").href = BOOKING_URL; }
 const CONTACT_EMAIL = "caiquenevesdesenvolvimento@gmail.com";
 const FORM_ENDPOINT = "https://formsubmit.co/ajax/" + CONTACT_EMAIL;
 document.getElementById("form").addEventListener("submit", async e => {

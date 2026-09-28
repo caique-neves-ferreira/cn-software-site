@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://cfnsoftware.com/#org",
+  "name": "CFN Software Consulting",
+  "legalName": "Caique Ferreira Silva Neves Desenvolvedor de Sistemas LTDA",
+  "url": "https://cfnsoftware.com/",
+  "logo": "https://cfnsoftware.com/logo.png",
+  "slogan": "Software engineering for systems that can't stop.",
+  "taxID": "54.115.471/0001-74",
+  "areaServed": "Worldwide",
+  "address": { "@type": "PostalAddress", "addressCountry": "BR" },
+  "knowsAbout": [".NET", "C#", "AWS", "Kafka", "Microservices", "Angular", "React"],
+  "sameAs": ["https://www.linkedin.com/company/cnsoftwareconsulting"],
+  "founder": {
+    "@type": "Person",
+    "@id": "https://cfnsoftware.com/#founder",
+    "name": "Caique Ferreira Silva Neves",
+    "alternateName": "Caique Neves",
+    "jobTitle": "Senior .NET Engineer",
+    "sameAs": [
+      "https://www.linkedin.com/in/caique-ferreira-neves",
+      "https://github.com/caique-neves-ferreira"
+    ]
+  }
+}
+</script>

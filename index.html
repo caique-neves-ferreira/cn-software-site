@@ -245,10 +245,11 @@ h2{font-size:clamp(30px,4.2vw,46px); line-height:1.08; letter-spacing:-.03em; ma
 
 /* contact */
 .contact{border-top:1px solid var(--line); background:radial-gradient(800px 400px at 0 0,rgba(110,160,225,.10),transparent 70%),var(--bg)}
-.contact .lead{margin-bottom:16px}
-.mail-link{display:inline-block; color:var(--amber); font:500 15px var(--mono); text-decoration:none; margin-bottom:48px; word-break:break-word}
+.contact-head{text-align:center; max-width:640px; margin:0 auto}
+.contact .lead{margin:0 auto 16px; max-width:560px}
+.mail-link{display:inline-block; color:var(--amber); font:500 15px var(--mono); text-decoration:none; margin-bottom:56px; word-break:break-word}
 .mail-link:hover{text-decoration:underline}
-.contact-grid{display:grid; grid-template-columns:1.6fr 1fr; gap:24px; align-items:start}
+.contact-grid{max-width:640px; margin:0 auto}
 form{display:grid; gap:16px; background:var(--surface); border:1px solid var(--line-2); border-radius:14px; padding:32px}
 .form-head h3{margin:0 0 6px; font-size:22px}
 .form-head p{margin:0 0 8px; color:var(--muted); font-size:16px}
@@ -261,20 +262,20 @@ textarea{min-height:130px; resize:vertical}
 button.send{justify-self:start; background:var(--amber); color:var(--ink); border:0; font:600 16px/1 "IBM Plex Sans",system-ui,sans-serif; padding:14px 24px; border-radius:8px; cursor:pointer}
 button.send:disabled{opacity:.6}
 .note{font-size:14px; color:var(--muted); min-height:1.4em; margin:0}
-.direct{display:grid; gap:16px}
-.direct > div{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:24px}
-.direct h4{margin:0 0 8px; font:500 12px var(--mono); color:var(--dim)}
-.direct a{color:var(--text); font-weight:600; font-size:15px; text-decoration:none; overflow-wrap:anywhere}
-.direct a:hover{color:var(--amber)}
-.direct p{margin:0; font-weight:600}
-.direct p.muted{margin-top:6px; font-weight:400; font-size:15px; color:var(--muted)}
-.direct .next{border-color:rgba(242,184,75,.3)}
-.direct .next ol{margin:8px 0 0; padding-left:20px; display:grid; gap:8px; color:var(--text); font-size:15px}
-.direct .next li::marker{color:var(--amber); font-family:var(--mono)}
+form .send{width:100%}
+.book-card{max-width:640px; margin:24px auto 0; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:18px 24px; border:1px solid rgba(242,184,75,.3); border-radius:14px; background:var(--surface)}
 .book-card[hidden]{display:none}
-.direct .book{display:inline-block; margin-top:12px; background:var(--amber); color:var(--ink); padding:10px 16px; border-radius:8px; font-size:15px}
-.direct .book:hover{color:var(--ink)}
-@media (max-width:760px){ .contact-grid,.row{grid-template-columns:1fr} form{padding:24px} }
+.book-card p{margin:0; color:var(--muted); font-size:15px}
+.book{display:inline-block; background:var(--amber); color:var(--ink); padding:10px 16px; border-radius:8px; font-size:15px; font-weight:600; text-decoration:none}
+.ct-info{display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:640px; margin:56px auto 0; text-align:center}
+.ct-info > div{display:flex; flex-direction:column; align-items:center; gap:6px}
+.ct-ico{display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:var(--amber-soft); margin-bottom:6px}
+.ct-ico svg{width:18px; height:18px; fill:none; stroke:var(--amber); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+.ct-info h4{margin:0; font-size:15px; font-weight:600; color:var(--text)}
+.ct-info a,.ct-info p{margin:0; color:var(--muted); font-size:14px; text-decoration:none; overflow-wrap:anywhere}
+.ct-info a:hover{color:var(--amber)}
+@media (max-width:760px){ .row{grid-template-columns:1fr} form{padding:24px} }
+@media (max-width:520px){ .ct-info{grid-template-columns:1fr; gap:32px} }
 
 /* footer */
 footer{background:#040A14; color:var(--muted); font-size:15px; padding:64px 0 32px; border-top:1px solid var(--line)}
@@ -519,11 +520,11 @@ footer ul a:hover{color:var(--amber)}
           <button class="send" type="submit" data-i18n="f.send">Enviar mensagem</button>
           <p class="note" id="note" role="status"></p>
         </form>
-        <aside class="direct">
-          <div class="next"><h4 data-i18n="nx.h">Próximos passos</h4><ol><li data-i18n="nx.1">Respondemos em até um dia útil</li><li data-i18n="nx.2">Conversa de 30 minutos, sem custo</li><li data-i18n="nx.3">Proposta por escrito com escopo, prazo e valor</li></ol></div>
-          <div class="book-card" hidden><h4 data-i18n="bk.h">Conversa rápida</h4><p data-i18n="bk.t">30 minutos para entender seu desafio.</p><a class="book" href="#" target="_blank" rel="noopener" data-i18n="bk.b">Agendar conversa</a></div>
-          <div><h4 data-i18n="ct.mail">E-mail</h4><a href="mailto:caiquenevesdesenvolvimento@gmail.com">caiquenevesdesenvolvimento@gmail.com</a></div>
-        </aside>
+      </div>
+      <div class="book-card" hidden><p data-i18n="bk.t">30 minutos para entender seu desafio.</p><a class="book" href="#" target="_blank" rel="noopener" data-i18n="bk.b">Agendar conversa</a></div>
+      <div class="ct-info">
+        <div><span class="ct-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><h4 data-i18n="ct.mail">E-mail</h4><a href="mailto:caiquenevesdesenvolvimento@gmail.com">caiquenevesdesenvolvimento@gmail.com</a></div>
+        <div><span class="ct-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><h4 data-i18n="ct.locl">Localização</h4><p data-i18n="ct.locv">Brasil · atendimento 100% remoto</p></div>
       </div>
     </div>
   </section>
@@ -646,7 +647,7 @@ const EN = {
     "how.3.t":"Fully remote engagement","how.3.d":"UTC-3: one to two hours ahead of US Eastern time, with a full shared business day for East Coast teams and afternoon overlap with Europe.",
   "ct.eyebrow":"Contact","ct.title":"Get in touch","ct.lead":"Need .NET engineering for a mission-critical system? Tell us what you need and we'll get back to you within one business day.",
   "ct.form.t":"Tell us what you need","ct.form.s":"Describe the project or your team's needs and we'll follow up to discuss next steps.",
-  "ct.mail":"Email","ct.loc":"Engagement","ct.loc.v":"Fully remote","ct.loc.d":"Remote engagements across Brazil, Europe and the United States.",
+  "ct.mail":"Email","ct.locl":"Location","ct.locv":"Brazil · fully remote","ct.loc":"Engagement","ct.loc.v":"Fully remote","ct.loc.d":"Remote engagements across Brazil, Europe and the United States.",
   "f.name":"Name","f.email":"Work email","f.company":"Company","f.type":"Project type","f.msg":"Technical challenge","f.msg.ph":"E.g. which system, volume, deadline and what's blocking you today.","f.send":"Send message",
   "o.1":"Backend / Kafka messaging","o.2":"APIs and integrations","o.3":"Legacy system modernization","o.4":"Full-stack application (Angular / React)",
   "o.5":"Cloud, cost and observability","o.6":"Dedicated .NET engineering allocation","o.7":"Not sure yet",

@@ -3,43 +3,43 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>CFN Software Consulting — Consultoria e Desenvolvimento .NET</title>
+<title>CFN Software Consulting | Engenharia de Software .NET</title>
 <link rel="canonical" href="https://cfnsoftware.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cfnsoftware.com/">
 <meta property="og:site_name" content="CFN Software Consulting">
-<meta property="og:title" content="CFN Software Consulting — Consultoria e Desenvolvimento .NET">
-<meta property="og:description" content="Engenharia de software para sistemas que não podem parar.">
+<meta property="og:title" content="CFN Software Consulting | Engenharia de Software .NET">
+<meta property="og:description" content="Engenharia de software para sistemas que não podem parar. Backend .NET, sistemas distribuídos, modernização, integrações e cloud.">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:locale:alternate" content="en_US">
 <meta property="og:image" content="https://cfnsoftware.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="CFN Software Consulting — Engenharia de software para sistemas que não podem parar.">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CFN Software Consulting | Engenharia de Software .NET">
+<meta name="twitter:description" content="Backend .NET, sistemas distribuídos, modernização, integrações e cloud.">
+<meta name="twitter:image" content="https://cfnsoftware.com/og-image.png">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#060F1C">
-<link rel="alternate" hreflang="pt-BR" href="https://cfnsoftware.com/">
-<link rel="alternate" hreflang="en" href="https://cfnsoftware.com/?lang=en">
-<link rel="alternate" hreflang="x-default" href="https://cfnsoftware.com/">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
-      "@id": "https://cfnsoftware.com/#org",
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://cfnsoftware.com/#organization",
       "name": "CFN Software Consulting",
       "legalName": "Caique Ferreira Silva Neves Desenvolvedor de Sistemas LTDA",
       "url": "https://cfnsoftware.com/",
-      "logo": "https://cfnsoftware.com/og-image.png",
+      "logo": { "@type": "ImageObject", "url": "https://cfnsoftware.com/og-image.png" },
       "image": "https://cfnsoftware.com/og-image.png",
-      "description": "Consultoria em engenharia de software .NET para sistemas de missão crítica: backends orientados a eventos, APIs, modernização de legado e cloud.",
+      "description": "Consultoria brasileira especializada em engenharia de software .NET, sistemas distribuídos, APIs, integrações, modernização de sistemas legados e cloud.",
       "slogan": "Engenharia de software para sistemas que não podem parar.",
       "email": "caiquenevesdesenvolvimento@gmail.com",
       "address": { "@type": "PostalAddress", "addressCountry": "BR" },
-      "areaServed": ["BR", "US", "EU"],
+      "areaServed": { "@type": "Country", "name": "Brazil" },
       "knowsLanguage": ["pt-BR", "en"],
-      "knowsAbout": [".NET", "C#", "AWS", "Apache Kafka", "Microservices", "Event-driven architecture", "Legacy modernization", "Angular", "React"],
+      "knowsAbout": [".NET", "C#", "ASP.NET Core", "Distributed Systems", "Software Architecture", "Apache Kafka", "Event-Driven Architecture", "Microservices", "AWS", "Azure", "Legacy System Modernization", "System Integration"],
       "founder": { "@id": "https://cfnsoftware.com/#founder" },
       "sameAs": ["https://www.linkedin.com/company/cnsoftwareconsulting"]
     },
@@ -49,8 +49,8 @@
       "name": "Caique Ferreira Silva Neves",
       "alternateName": ["Caique Neves", "Caique Ferreira Neves"],
       "jobTitle": "Founder & Principal Engineer",
-      "worksFor": { "@id": "https://cfnsoftware.com/#org" },
-      "knowsAbout": [".NET", "C#", "AWS", "Apache Kafka", "Microservices"],
+      "worksFor": { "@id": "https://cfnsoftware.com/#organization" },
+      "knowsAbout": [".NET", "C#", "Distributed Systems", "Software Architecture", "Apache Kafka", "AWS"],
       "sameAs": [
         "https://www.linkedin.com/in/caique-ferreira-neves",
         "https://github.com/caique-neves-ferreira"
@@ -61,8 +61,8 @@
       "@id": "https://cfnsoftware.com/#website",
       "url": "https://cfnsoftware.com/",
       "name": "CFN Software Consulting",
-      "inLanguage": ["pt-BR", "en"],
-      "publisher": { "@id": "https://cfnsoftware.com/#org" }
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://cfnsoftware.com/#organization" }
     }
   ]
 }
@@ -70,7 +70,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon.png" sizes="192x192">
 <link rel="apple-touch-icon" href="/favicon.png">
-<meta name="description" content="Consultoria em sistemas .NET de alta escala para bancos, fintechs e varejo. Backends orientados a eventos, APIs, modernização de legado e aplicações fullstack.">
+<meta name="description" content="Consultoria especializada em engenharia de software .NET, sistemas distribuídos, APIs, Kafka, modernização de sistemas legados e cloud.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -322,7 +322,7 @@ footer ul a:hover{color:var(--amber)}
     <div class="wrap">
       <div class="hero-inner">
         <h1 data-i18n="hero.title">Sistemas .NET que aguentam escala, auditoria e prazo.</h1>
-        <p data-i18n="hero.sub">Consultoria em backends de alta escala, APIs e aplicações fullstack para bancos, fintechs e varejo. Atendimento técnico direto, do diagnóstico à entrega.</p>
+        <p data-i18n="hero.sub">Projetamos, modernizamos e evoluímos backends, sistemas distribuídos, APIs e integrações para empresas que precisam de confiabilidade, escala e performance.</p>
         <a class="cta" href="#contato" data-i18n="hero.cta">Falar sobre um projeto</a>
         <a class="ghost" href="#servicos" data-i18n="hero.cases">Conhecer as soluções</a>
         <p class="hero-note" data-i18n="hero.note">Resposta em até um dia útil · Primeira conversa sem custo</p>
@@ -345,7 +345,7 @@ footer ul a:hover{color:var(--amber)}
       <div class="services">
         <div class="svc" id="svc-1"><h3 data-i18n="svc.1.t">Backends orientados a eventos</h3><p data-i18n="svc.1.d">Mensageria com Kafka e workers .NET para processar milhões de eventos com entrega garantida e alta disponibilidade.</p></div>
         <div class="svc" id="svc-2"><h3 data-i18n="svc.2.t">APIs e integrações</h3><p data-i18n="svc.2.d">APIs RESTful seguras com ASP.NET Core, integração entre sistemas, ERPs e parceiros, com Clean Architecture, DDD e CQRS.</p></div>
-        <div class="svc" id="svc-3"><h3 data-i18n="svc.3.t">Modernização de legado</h3><p data-i18n="svc.3.d">Migração de .NET Framework, WPF e ASP Clássico para arquiteturas modernas e cloud-native, sem parar a operação.</p></div>
+        <div class="svc" id="svc-3"><h3><a href="/servicos/modernizacao-sistemas-legados/" data-i18n="svc.3.t">Modernização de legado</a></h3><p data-i18n="svc.3.d">Migração de .NET Framework, WPF e ASP Clássico para arquiteturas modernas e cloud-native, sem parar a operação.</p></div>
         <div class="svc" id="svc-4"><h3 data-i18n="svc.4.t">Aplicações fullstack</h3><p data-i18n="svc.4.d">Painéis e sistemas internos com Angular ou React sobre backend .NET, com autenticação corporativa e tempo real.</p></div>
         <div class="svc" id="svc-5"><h3 data-i18n="svc.5.t">Cloud e custo</h3><p data-i18n="svc.5.d">Infraestrutura em AWS e Azure com Terraform, CI/CD e observabilidade, além de revisão de custos (FinOps).</p></div>
         <div class="svc" id="svc-6"><h3 data-i18n="svc.6.t">IA aplicada ao desenvolvimento</h3><p data-i18n="svc.6.d">Agentes de revisão de código e quality gates automáticos, para usar IA com controle de qualidade.</p></div>
@@ -550,7 +550,7 @@ footer ul a:hover{color:var(--amber)}
       <div><h4 data-i18n="ft.svc">Soluções</h4><ul>
         <li><a href="#svc-1" data-i18n="svc.1.t">Backends orientados a eventos</a></li>
         <li><a href="#svc-2" data-i18n="svc.2.t">APIs e integrações</a></li>
-        <li><a href="#svc-3" data-i18n="svc.3.t">Modernização de legado</a></li>
+        <li><a href="/servicos/modernizacao-sistemas-legados/" data-i18n="svc.3.t">Modernização de legado</a></li>
         <li><a href="#svc-4" data-i18n="svc.4.t">Aplicações fullstack</a></li>
         <li><a href="#svc-5" data-i18n="svc.5.t">Cloud e custo</a></li>
         <li><a href="#svc-6" data-i18n="svc.6.t">IA aplicada ao desenvolvimento</a></li></ul></div>
